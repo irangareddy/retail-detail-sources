@@ -1,4 +1,5 @@
 """Classify FRED data based on interpretation rules."""
+
 import json
 import logging
 import os

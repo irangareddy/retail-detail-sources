@@ -1,4 +1,5 @@
 """Transform FRED data into unified format."""
+
 import glob
 import json
 import logging
