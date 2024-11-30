@@ -1,0 +1,134 @@
+{
+  "2019-10": {
+    "consumer_confidence": {
+      "value": 95.5,
+      "category": "low_confidence",
+      "description": "Below 100 indicates low consumer confidence",
+      "impact": "Consumers are more cautious, reducing demand",
+      "label": "Consumer Confidence Index (UMCSENT)"
+    },
+    "unemployment_rate": {
+      "value": 3.6,
+      "category": "low_unemployment",
+      "description": "Below 5% suggests a strong economy",
+      "impact": "Increased demand for goods and services",
+      "label": "Unemployment Rate (UNRATE)"
+    },
+    "inflation_rate": {
+      "value": 257.155,
+      "category": "high_inflation",
+      "description": "Above 5% indicates high inflation",
+      "impact": "Reduced purchasing power and demand",
+      "label": "Inflation Rate (CPIAUCSL)"
+    },
+    "gdp_growth_rate": {
+      "value": 2.8,
+      "category": "strong_growth",
+      "description": "Strong positive growth suggests robust economic expansion",
+      "impact": "Higher GDP growth signals rising demand for consumer goods and services",
+      "label": "GDP Growth Rate (A191RL1Q225SBEA)"
+    },
+    "federal_funds_rate": {
+      "value": 1.83,
+      "category": "low_rate",
+      "description": "Below 2% signals easy borrowing conditions",
+      "impact": "Stimulates consumer spending and investment, increased demand in retail",
+      "label": "Federal Funds Rate (FEDFUNDS)"
+    },
+    "retail_sales": {
+      "value": 453365.0,
+      "category": "strong_growth",
+      "description": "Strong growth in retail sales",
+      "impact": "Robust consumer spending across categories",
+      "label": "Retail Sales Index (RSXFS)"
+    }
+  },
+  "2019-11": {
+    "consumer_confidence": {
+      "value": 96.8,
+      "category": "low_confidence",
+      "description": "Below 100 indicates low consumer confidence",
+      "impact": "Consumers are more cautious, reducing demand",
+      "label": "Consumer Confidence Index (UMCSENT)"
+    },
+    "unemployment_rate": {
+      "value": 3.6,
+      "category": "low_unemployment",
+      "description": "Below 5% suggests a strong economy",
+      "impact": "Increased demand for goods and services",
+      "label": "Unemployment Rate (UNRATE)"
+    },
+    "inflation_rate": {
+      "value": 257.879,
+      "category": "high_inflation",
+      "description": "Above 5% indicates high inflation",
+      "impact": "Reduced purchasing power and demand",
+      "label": "Inflation Rate (CPIAUCSL)"
+    },
+    "gdp_growth_rate": {
+      "value": null,
+      "category": "unknown",
+      "description": "No data available",
+      "impact": "Unable to determine impact",
+      "label": "GDP Growth Rate (A191RL1Q225SBEA)"
+    },
+    "federal_funds_rate": {
+      "value": 1.55,
+      "category": "low_rate",
+      "description": "Below 2% signals easy borrowing conditions",
+      "impact": "Stimulates consumer spending and investment, increased demand in retail",
+      "label": "Federal Funds Rate (FEDFUNDS)"
+    },
+    "retail_sales": {
+      "value": 456587.0,
+      "category": "strong_growth",
+      "description": "Strong growth in retail sales",
+      "impact": "Robust consumer spending across categories",
+      "label": "Retail Sales Index (RSXFS)"
+    }
+  },
+  "2021-05": {
+    "consumer_confidence": {
+      "value": 82.9,
+      "category": "low_confidence",
+      "description": "Below 100 indicates low consumer confidence",
+      "impact": "Consumers are more cautious, reducing demand",
+      "label": "Consumer Confidence Index (UMCSENT)"
+    },
+    "unemployment_rate": {
+      "value": 5.8,
+      "category": "moderate_unemployment",
+      "description": "Between 5-10% indicates economic challenges",
+      "impact": "Moderate caution in consumer spending",
+      "label": "Unemployment Rate (UNRATE)"
+    },
+    "inflation_rate": {
+      "value": 268.452,
+      "category": "high_inflation",
+      "description": "Above 5% indicates high inflation",
+      "impact": "Reduced purchasing power and demand",
+      "label": "Inflation Rate (CPIAUCSL)"
+    },
+    "gdp_growth_rate": {
+      "value": null,
+      "category": "unknown",
+      "description": "No data available",
+      "impact": "Unable to determine impact",
+      "label": "GDP Growth Rate (A191RL1Q225SBEA)"
+    },
+    "federal_funds_rate": {
+      "value": 0.06,
+      "category": "low_rate",
+      "description": "Below 2% signals easy borrowing conditions",
+      "impact": "Stimulates consumer spending and investment, increased demand in retail",
+      "label": "Federal Funds Rate (FEDFUNDS)"
+    },
+    "retail_sales": {
+      "value": 545289.0,
+      "category": "strong_growth",
+      "description": "Strong growth in retail sales",
+      "impact": "Robust consumer spending across categories",
+      "label": "Retail Sales Index (RSXFS)"
+    }
+  }
+}

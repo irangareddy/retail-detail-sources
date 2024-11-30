@@ -1,0 +1,1 @@
+"""Fred data source module."""
