@@ -4,8 +4,8 @@ import os
 import pytest
 
 from retail_data_sources.fred.constants import SERIES_MAPPING
-from retail_data_sources.fred.models.metric import FREDData, Metric
 from retail_data_sources.fred.fred_api_handler import FREDAPIHandler
+from retail_data_sources.fred.models.metric import FREDData, Metric
 
 
 @pytest.fixture

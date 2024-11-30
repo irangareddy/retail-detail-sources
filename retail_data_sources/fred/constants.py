@@ -1,4 +1,3 @@
-# retail_data_sources/fred/constants.py
 SERIES_MAPPING = {
     "UMCSENT": "consumer_confidence",
     "UNRATE": "unemployment_rate",
@@ -7,12 +6,3 @@ SERIES_MAPPING = {
     "FEDFUNDS": "federal_funds_rate",
     "RSXFS": "retail_sales",
 }
-
-# retail_data_sources/fred/fetcher.py
-
-
-# retail_data_sources/fred/transformer.py
-
-# retail_data_sources/fred/classifier.py
-
-# retail_data_sources/fred/api_handler.py

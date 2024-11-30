@@ -14,6 +14,9 @@ readme = "README-public.md"
 [tool.poetry.dependencies]
 python = ">=3.11, ^3"
 rapidfuzz = "^3.10.1"
+pandas = "^2.2.3"
+numpy = "^2.1.3"
+statsmodels = "^0.14.4"
 
 
 

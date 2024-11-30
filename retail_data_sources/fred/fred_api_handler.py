@@ -5,8 +5,8 @@ from typing import Any
 
 from retail_data_sources.fred.classifier import FREDDataClassifier
 from retail_data_sources.fred.constants import SERIES_MAPPING
-from retail_data_sources.fred.models.metric import FREDData
 from retail_data_sources.fred.fetcher import FREDDataFetcher
+from retail_data_sources.fred.models.metric import FREDData
 from retail_data_sources.fred.transformer import FREDTransformer
 
 logger = logging.getLogger(__name__)

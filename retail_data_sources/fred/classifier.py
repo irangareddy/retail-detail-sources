@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 class FREDDataClassifier:
     """Classify FRED data based on interpretation rules."""
+
     def __init__(self, rules_file: str = None, rules_dict: dict = None):
         """Initialize the classifier with interpretation rules."""
         self.rules = rules_dict if rules_dict else self._load_rules(rules_file)
