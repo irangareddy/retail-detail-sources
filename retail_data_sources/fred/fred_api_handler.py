@@ -74,6 +74,8 @@ class FREDAPIHandler:
 
             # Step 3: Classify data
             classified_data = self.classifier.classify_data(transformed_data)
+            with open("../../samples/fred/classified_data.json", "w") as f:
+                json.dump(classified_data, f, indent=2)
             if not classified_data:
                 logger.error("Data classification failed")
                 return None

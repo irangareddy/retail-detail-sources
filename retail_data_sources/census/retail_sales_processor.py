@@ -15,57 +15,57 @@ class RetailSalesProcessor:
     """Retail sales data processor using Census API."""
 
     state_id_to_abbreviation = {
-        "01": "AL",
-        "02": "AK",
-        "04": "AZ",
-        "05": "AR",
+        # "01": "AL",
+        # "02": "AK",
+        # "04": "AZ",
+        # "05": "AR",
         "06": "CA",
-        "08": "CO",
-        "09": "CT",
-        "10": "DE",
-        "11": "DC",
-        "12": "FL",
-        "13": "GA",
-        "15": "HI",
-        "16": "ID",
-        "17": "IL",
-        "18": "IN",
-        "19": "IA",
-        "20": "KS",
-        "21": "KY",
-        "22": "LA",
-        "23": "ME",
-        "24": "MD",
-        "25": "MA",
-        "26": "MI",
-        "27": "MN",
-        "28": "MS",
-        "29": "MO",
-        "30": "MT",
-        "31": "NE",
-        "32": "NV",
-        "33": "NH",
-        "34": "NJ",
-        "35": "NM",
+        # "08": "CO",
+        # "09": "CT",
+        # "10": "DE",
+        # "11": "DC",
+        # "12": "FL",
+        # "13": "GA",
+        # "15": "HI",
+        # "16": "ID",
+        # "17": "IL",
+        # "18": "IN",
+        # "19": "IA",
+        # "20": "KS",
+        # "21": "KY",
+        # "22": "LA",
+        # "23": "ME",
+        # "24": "MD",
+        # "25": "MA",
+        # "26": "MI",
+        # "27": "MN",
+        # "28": "MS",
+        # "29": "MO",
+        # "30": "MT",
+        # "31": "NE",
+        # "32": "NV",
+        # "33": "NH",
+        # "34": "NJ",
+        # "35": "NM",
         "36": "NY",
-        "37": "NC",
-        "38": "ND",
-        "39": "OH",
-        "40": "OK",
-        "41": "OR",
-        "42": "PA",
-        "44": "RI",
-        "45": "SC",
-        "46": "SD",
-        "47": "TN",
+        # "37": "NC",
+        # "38": "ND",
+        # "39": "OH",
+        # "40": "OK",
+        # "41": "OR",
+        # "42": "PA",
+        # "44": "RI",
+        # "45": "SC",
+        # "46": "SD",
+        # "47": "TN",
         "48": "TX",
-        "49": "UT",
-        "50": "VT",
-        "51": "VA",
-        "53": "WA",
-        "54": "WV",
-        "55": "WI",
-        "56": "WY",
+        # "49": "UT",
+        # "50": "VT",
+        # "51": "VA",
+        # "53": "WA",
+        # "54": "WV",
+        # "55": "WI",
+        # "56": "WY",
     }
 
     def __init__(self, api_key: str):
@@ -217,20 +217,22 @@ class RetailSalesProcessor:
                 expected_records += expected_states * expected_categories
 
             completeness = total_records / expected_records if expected_records > 0 else 0
-            consistency = 1.0
 
+            consistency_scores = []  # Store individual category consistency scores
             for month_data in data["sales_data"].values():
                 for category in self.categories:
                     national_total = month_data["national_total"].get(category, 0)
-                    state_sum = sum(
+                    state_sums = [
                         state_data.get(category, {}).get("sales_value", 0)
                         for state_data in month_data["states"].values()
-                    )
+                    ]
+                    state_sum = sum(state_sums)
 
                     if national_total > 0:
                         diff_percentage = abs(state_sum - national_total) / national_total
-                        if diff_percentage > 0.02:
-                            consistency -= 0.1
+                        consistency_scores.append(1 if diff_percentage <= 0.02 else 0)  # binary pass/fail
+
+            consistency = sum(consistency_scores) / len(consistency_scores) if consistency_scores else 0
 
             return ValidationMetrics(
                 completeness=round(completeness, 3),
@@ -273,11 +275,11 @@ def main() -> None:
     processor = RetailSalesProcessor(api_key)
 
     # Process last 5 years
-    current_year = datetime.now(tz=datetime.timezone.utc).year
-    years = [str(year) for year in range(current_year - 5, current_year)]
+    current_year = datetime.now(tz=None).year
+    # years = [str(year) for year in range(current_year - 0, current_year)]
     try:
         # Process data
-        data = processor.process_retail_data(years)
+        data = processor.process_retail_data([str(current_year)])
 
         if data:
             # Validate
