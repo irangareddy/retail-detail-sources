@@ -38,7 +38,7 @@ class FREDTransformer:
                     if value is not None:  # Only include non-None values
                         result[date] = value
                 except (ValueError, TypeError):
-                    pass
+                    ...
         return result
 
     def transform_data(self) -> dict[str, dict[str, Any]]:

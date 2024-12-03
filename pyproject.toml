@@ -93,7 +93,7 @@ ignore = [
     # Fix these issues in the future @Ranga
     "C901",    # function is too complex
     "PLR0912", # too-many-branches
-
+    "S608",   # implicit-str-concat
 
 ]
 
