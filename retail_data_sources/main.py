@@ -55,6 +55,7 @@ class DataFetcher:
         self.fetch_census_data()
         self.fetch_weather_data()
 
+
 if __name__ == "__main__":
     fetcher = DataFetcher()
     fetcher.fetch_all_data()

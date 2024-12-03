@@ -14,6 +14,7 @@ class WeatherStatistics:
     st_dev: float
     num: int
 
+
 @dataclass
 class MonthlyWeatherStats:
     month: int
@@ -24,6 +25,7 @@ class MonthlyWeatherStats:
     precipitation: WeatherStatistics
     clouds: WeatherStatistics
     sunshine_hours_total: float
+
 
 @dataclass
 class StateWeather:

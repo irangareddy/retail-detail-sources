@@ -12,6 +12,9 @@ def setup_logging() -> logging.Logger:
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
-        handlers=[logging.FileHandler(f"{log_dir}/census_data_processing.log"), logging.StreamHandler()],
+        handlers=[
+            logging.FileHandler(f"{log_dir}/census_data_processing.log"),
+            logging.StreamHandler(),
+        ],
     )
     return logging.getLogger(__name__)

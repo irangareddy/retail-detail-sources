@@ -9,6 +9,7 @@ from retail_data_sources.fred.transformer import FREDTransformer
 
 logger = logging.getLogger(__name__)
 
+
 class FREDAPIHandler:
     def __init__(
         self,

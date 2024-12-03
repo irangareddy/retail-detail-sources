@@ -1,3 +1,5 @@
+"""Retail sales data processor using Census API."""
+
 import json
 import os
 from datetime import datetime
@@ -19,7 +21,7 @@ from retail_data_sources.utils.logging import setup_logging
 class RetailSalesProcessor:
     """Retail sales data processor using Census API."""
 
-    state_id_to_abbreviation = {
+    state_id_to_abbreviation: {str: str} = {
         "01": "AL",
         "02": "AK",
         "04": "AZ",
@@ -151,7 +153,7 @@ class RetailSalesProcessor:
             return {}
 
     def calculate_state_sales(
-            self, national_sales: float, state_weights: dict[str, dict[str, float]]
+        self, national_sales: float, state_weights: dict[str, dict[str, float]]
     ) -> dict[str, float]:
         """Calculate state-level sales using weights."""
         state_sales = {}
@@ -187,10 +189,7 @@ class RetailSalesProcessor:
                         if month_key not in sales_data:
                             sales_data[month_key] = MonthData(
                                 states={},
-                                national_total=CategoryTotal(
-                                    category_445=0.0,
-                                    category_448=0.0
-                                )
+                                national_total=CategoryTotal(category_445=0.0, category_448=0.0),
                             )
 
                         # Update national total
@@ -212,7 +211,7 @@ class RetailSalesProcessor:
                             # Ensure values are Python floats
                             sales_obj = Sales(
                                 sales_value=float(sales_value),
-                                state_share=float(state_weights[state_code]["weight"])
+                                state_share=float(state_weights[state_code]["weight"]),
                             )
 
                             if category == "445":
@@ -221,30 +220,21 @@ class RetailSalesProcessor:
                                 sales_data[month_key].states[state_abbr].category_448 = sales_obj
 
             metadata = Metadata(
-                last_updated=datetime.now().strftime("%Y-%m-%d"),
-                categories=self.categories
+                last_updated=datetime.now().strftime("%Y-%m-%d"), categories=self.categories
             )
 
-            return RetailReport(
-                metadata=metadata,
-                sales_data=sales_data
-            )
+            return RetailReport(metadata=metadata, sales_data=sales_data)
 
         except Exception as e:
             self.logger.error(f"Error in main processing: {e}")
             empty_month_data = MonthData(
-                states={},
-                national_total=CategoryTotal(
-                    category_445=0.0,
-                    category_448=0.0
-                )
+                states={}, national_total=CategoryTotal(category_445=0.0, category_448=0.0)
             )
             return RetailReport(
                 metadata=Metadata(
-                    last_updated=datetime.now().strftime("%Y-%m-%d"),
-                    categories=self.categories
+                    last_updated=datetime.now().strftime("%Y-%m-%d"), categories=self.categories
                 ),
-                sales_data={"error": empty_month_data}
+                sales_data={"error": empty_month_data},
             )
 
     def validate_data(self, data: RetailReport) -> tuple[bool, dict]:
@@ -254,15 +244,12 @@ class RetailSalesProcessor:
                 "completeness": {},
                 "consistency": {},
                 "share_variations": {},
-                "timestamp": datetime.now().isoformat()
+                "timestamp": datetime.now().isoformat(),
             }
 
             # Track state shares across months for variation analysis
             state_shares = {
-                state: {
-                    "445": set(),
-                    "448": set()
-                }
+                state: {"445": set(), "448": set()}
                 for state in self.state_id_to_abbreviation.values()
             }
 
@@ -270,7 +257,7 @@ class RetailSalesProcessor:
                 month_validation = {
                     "national_totals_present": bool(month_data.national_total),
                     "states_complete": True,
-                    "share_sums": {"445": 0, "448": 0}
+                    "share_sums": {"445": 0, "448": 0},
                 }
 
                 # Check if all states have both categories
@@ -285,16 +272,21 @@ class RetailSalesProcessor:
                 for state, state_data in month_data.states.items():
                     if state_data.category_445:
                         share_445_sum += state_data.category_445.state_share
-                        state_shares[state]["445"].add(round(state_data.category_445.state_share, 4))
+                        state_shares[state]["445"].add(
+                            round(state_data.category_445.state_share, 4)
+                        )
 
                     if state_data.category_448:
                         share_448_sum += state_data.category_448.state_share
-                        state_shares[state]["448"].add(round(state_data.category_448.state_share, 4))
+                        state_shares[state]["448"].add(
+                            round(state_data.category_448.state_share, 4)
+                        )
 
                 month_validation["share_sums"]["445"] = round(share_445_sum, 4)
                 month_validation["share_sums"]["448"] = round(share_448_sum, 4)
-                month_validation["shares_valid"] = (0.98 <= share_445_sum <= 1.02 and
-                                                    0.98 <= share_448_sum <= 1.02)
+                month_validation["shares_valid"] = (
+                    0.98 <= share_445_sum <= 1.02 and 0.98 <= share_448_sum <= 1.02
+                )
 
                 validation_results[month] = month_validation
 
@@ -303,12 +295,12 @@ class RetailSalesProcessor:
                 validation_results["share_variations"][state] = {
                     "445": {
                         "unique_shares": sorted(list(state_shares[state]["445"])),
-                        "variation_count": len(state_shares[state]["445"])
+                        "variation_count": len(state_shares[state]["445"]),
                     },
                     "448": {
                         "unique_shares": sorted(list(state_shares[state]["448"])),
-                        "variation_count": len(state_shares[state]["448"])
-                    }
+                        "variation_count": len(state_shares[state]["448"]),
+                    },
                 }
 
             # Check for concerning patterns
@@ -326,20 +318,17 @@ class RetailSalesProcessor:
                     )
 
             # Overall validation result
-            is_valid = (
-                all(v["national_totals_present"] and not v["missing_states"] and v["shares_valid"]
-                    for v in validation_results.values()
-                    if isinstance(v, dict) and "national_totals_present" in v)
+            is_valid = all(
+                v["national_totals_present"] and not v["missing_states"] and v["shares_valid"]
+                for v in validation_results.values()
+                if isinstance(v, dict) and "national_totals_present" in v
             )
 
             return is_valid, validation_results
 
         except Exception as e:
             self.logger.error(f"Error in validation: {e}")
-            return False, {
-                "error": str(e),
-                "timestamp": datetime.now().isoformat()
-            }
+            return False, {"error": str(e), "timestamp": datetime.now().isoformat()}
 
     def save_data(self, data: RetailReport, validation_results: dict) -> None:
         """Save processed data and validation results as JSON."""
@@ -364,26 +353,27 @@ class RetailSalesProcessor:
         except Exception as e:
             self.logger.error(f"Error saving data: {e}")
 
+
 def main() -> None:
-        """Main function to execute the retail sales data processing."""
-        try:
-            api_key = os.getenv("CENSUS_API_KEY")
-            if not api_key:
-                raise ValueError("Census API key not found in environment variables")
+    """Main function to execute the retail sales data processing."""
+    try:
+        api_key = os.getenv("CENSUS_API_KEY")
+        if not api_key:
+            raise ValueError("Census API key not found in environment variables")
 
-            processor = RetailSalesProcessor(api_key)
-            current_year = datetime.now().year
+        processor = RetailSalesProcessor(api_key)
+        current_year = datetime.now().year
 
-            data = processor.process_retail_data([str(current_year)])
-            is_valid, validation_results = processor.validate_data(data)
-            print(data)
-            if is_valid:
-                processor.save_data(data, validation_results)
-            else:
-                raise ValueError("Data validation failed")
+        data = processor.process_retail_data([str(current_year)])
+        is_valid, validation_results = processor.validate_data(data)
+        print(data)
+        if is_valid:
+            processor.save_data(data, validation_results)
+        else:
+            raise ValueError("Data validation failed")
 
-        except Exception as e:
-            raise ValueError("Error in main execution") from e
+    except Exception as e:
+        raise ValueError("Error in main execution") from e
 
 
 if __name__ == "__main__":
