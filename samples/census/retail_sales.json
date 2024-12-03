@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2024-11-30",
+    "last_updated": "2024-12-02",
     "categories": {
       "445": "Food and Beverage Stores",
       "448": "Clothing and Accessories Stores"
@@ -9,7 +9,7 @@
   "sales_data": {
     "2024-01": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 830.06,
             "state_share": 0.0104
@@ -19,7 +19,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 199.53,
             "state_share": 0.0025
@@ -29,7 +29,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1284.99,
             "state_share": 0.0161
@@ -39,37 +39,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1197.2,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 207.23,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 1979.36,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 447.08,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 223.48,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 28.78,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 502.82,
             "state_share": 0.0063
@@ -89,7 +59,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1604.24,
             "state_share": 0.0201
@@ -99,7 +69,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1189.21,
             "state_share": 0.0149
@@ -109,7 +79,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 279.35,
             "state_share": 0.0035
@@ -119,7 +89,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 247.42,
             "state_share": 0.0031
@@ -129,7 +99,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5235.73,
             "state_share": 0.0656
@@ -139,7 +109,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2386.41,
             "state_share": 0.0299
@@ -149,7 +119,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 359.16,
             "state_share": 0.0045
@@ -159,7 +129,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 335.21,
             "state_share": 0.0042
@@ -169,7 +139,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2769.51,
             "state_share": 0.0347
@@ -179,7 +149,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1093.44,
             "state_share": 0.0137
@@ -189,7 +159,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 694.37,
             "state_share": 0.0087
@@ -199,7 +169,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 614.56,
             "state_share": 0.0077
@@ -209,7 +179,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 798.13,
             "state_share": 0.01
@@ -219,7 +189,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 925.83,
             "state_share": 0.0116
@@ -229,7 +199,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 454.93,
             "state_share": 0.0057
@@ -239,7 +209,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1843.68,
             "state_share": 0.0231
@@ -249,7 +219,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2649.79,
             "state_share": 0.0332
@@ -259,7 +229,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 1979.36,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 447.08,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1284.99,
             "state_share": 0.0161
@@ -269,7 +249,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 486.86,
             "state_share": 0.0061
@@ -279,7 +259,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1045.55,
             "state_share": 0.0131
@@ -289,7 +269,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 255.4,
             "state_share": 0.0032
@@ -299,7 +279,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 399.06,
             "state_share": 0.005
@@ -309,7 +289,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 662.45,
             "state_share": 0.0083
@@ -319,7 +299,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 438.97,
             "state_share": 0.0055
@@ -329,7 +309,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 3088.76,
             "state_share": 0.0387
@@ -339,7 +319,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 343.2,
             "state_share": 0.0043
@@ -359,7 +339,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2115.04,
             "state_share": 0.0265
@@ -369,7 +349,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 159.63,
             "state_share": 0.002
@@ -379,7 +359,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2306.6,
             "state_share": 0.0289
@@ -389,7 +369,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 566.67,
             "state_share": 0.0071
@@ -399,7 +379,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1197.2,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 207.23,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3408.02,
             "state_share": 0.0427
@@ -409,7 +399,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 335.21,
             "state_share": 0.0042
@@ -419,7 +409,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1085.46,
             "state_share": 0.0136
@@ -429,7 +419,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 191.55,
             "state_share": 0.0024
@@ -439,7 +429,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1300.95,
             "state_share": 0.0163
@@ -459,7 +449,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 534.75,
             "state_share": 0.0067
@@ -469,7 +459,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 223.48,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 28.78,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 2003.31,
             "state_share": 0.0251
@@ -479,7 +479,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 1915.51,
             "state_share": 0.024
@@ -489,7 +489,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 255.4,
             "state_share": 0.0032
@@ -499,7 +499,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1093.44,
             "state_share": 0.0137
@@ -509,7 +509,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 135.68,
             "state_share": 0.0017
@@ -527,7 +527,7 @@
     },
     "2024-02": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 800.33,
             "state_share": 0.0104
@@ -537,7 +537,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 192.39,
             "state_share": 0.0025
@@ -547,7 +547,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1238.98,
             "state_share": 0.0161
@@ -557,37 +557,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1154.32,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 237.65,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 1908.48,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 512.72,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 215.47,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 33.01,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 484.82,
             "state_share": 0.0063
@@ -607,7 +577,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1546.8,
             "state_share": 0.0201
@@ -617,7 +587,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1146.63,
             "state_share": 0.0149
@@ -627,7 +597,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 269.34,
             "state_share": 0.0035
@@ -637,7 +607,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 238.56,
             "state_share": 0.0031
@@ -647,7 +617,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5048.25,
             "state_share": 0.0656
@@ -657,7 +627,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2300.95,
             "state_share": 0.0299
@@ -667,7 +637,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 346.3,
             "state_share": 0.0045
@@ -677,7 +647,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 323.21,
             "state_share": 0.0042
@@ -687,7 +657,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2670.34,
             "state_share": 0.0347
@@ -697,7 +667,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1054.28,
             "state_share": 0.0137
@@ -707,7 +677,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 669.51,
             "state_share": 0.0087
@@ -717,7 +687,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 592.55,
             "state_share": 0.0077
@@ -727,7 +697,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 769.55,
             "state_share": 0.01
@@ -737,7 +707,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 892.68,
             "state_share": 0.0116
@@ -747,7 +717,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 438.64,
             "state_share": 0.0057
@@ -757,7 +727,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1777.66,
             "state_share": 0.0231
@@ -767,7 +737,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2554.91,
             "state_share": 0.0332
@@ -777,7 +747,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 1908.48,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 512.72,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1238.98,
             "state_share": 0.0161
@@ -787,7 +767,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 469.43,
             "state_share": 0.0061
@@ -797,7 +777,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1008.11,
             "state_share": 0.0131
@@ -807,7 +787,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 246.26,
             "state_share": 0.0032
@@ -817,7 +797,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 384.78,
             "state_share": 0.005
@@ -827,7 +807,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 638.73,
             "state_share": 0.0083
@@ -837,7 +817,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 423.25,
             "state_share": 0.0055
@@ -847,7 +827,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 2978.16,
             "state_share": 0.0387
@@ -857,7 +837,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 330.91,
             "state_share": 0.0043
@@ -877,7 +857,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2039.31,
             "state_share": 0.0265
@@ -887,7 +867,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 153.91,
             "state_share": 0.002
@@ -897,7 +877,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2224.0,
             "state_share": 0.0289
@@ -907,7 +887,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 546.38,
             "state_share": 0.0071
@@ -917,7 +897,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1154.32,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 237.65,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3285.98,
             "state_share": 0.0427
@@ -927,7 +917,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 323.21,
             "state_share": 0.0042
@@ -937,7 +927,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1046.59,
             "state_share": 0.0136
@@ -947,7 +937,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 184.69,
             "state_share": 0.0024
@@ -957,7 +947,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1254.37,
             "state_share": 0.0163
@@ -977,7 +967,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 515.6,
             "state_share": 0.0067
@@ -987,7 +977,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 215.47,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 33.01,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 1931.57,
             "state_share": 0.0251
@@ -997,7 +997,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 1846.92,
             "state_share": 0.024
@@ -1007,7 +1007,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 246.26,
             "state_share": 0.0032
@@ -1017,7 +1017,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1054.28,
             "state_share": 0.0137
@@ -1027,7 +1027,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 130.82,
             "state_share": 0.0017
@@ -1045,7 +1045,7 @@
     },
     "2024-03": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 865.78,
             "state_share": 0.0104
@@ -1055,7 +1055,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 208.12,
             "state_share": 0.0025
@@ -1065,7 +1065,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1340.29,
             "state_share": 0.0161
@@ -1075,37 +1075,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1248.72,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 269.85,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 2064.55,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 582.17,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 233.09,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 37.48,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 524.46,
             "state_share": 0.0063
@@ -1125,7 +1095,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1673.28,
             "state_share": 0.0201
@@ -1135,7 +1105,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1240.4,
             "state_share": 0.0149
@@ -1145,7 +1115,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 291.37,
             "state_share": 0.0035
@@ -1155,7 +1125,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 258.07,
             "state_share": 0.0031
@@ -1165,7 +1135,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5461.07,
             "state_share": 0.0656
@@ -1175,7 +1145,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2489.12,
             "state_share": 0.0299
@@ -1185,7 +1155,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 374.62,
             "state_share": 0.0045
@@ -1195,7 +1165,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 349.64,
             "state_share": 0.0042
@@ -1205,7 +1175,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2888.71,
             "state_share": 0.0347
@@ -1215,7 +1185,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1140.5,
             "state_share": 0.0137
@@ -1225,7 +1195,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 724.26,
             "state_share": 0.0087
@@ -1235,7 +1205,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 641.01,
             "state_share": 0.0077
@@ -1245,7 +1215,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 832.48,
             "state_share": 0.01
@@ -1255,7 +1225,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 965.68,
             "state_share": 0.0116
@@ -1265,7 +1235,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 474.51,
             "state_share": 0.0057
@@ -1275,7 +1245,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1923.03,
             "state_share": 0.0231
@@ -1285,7 +1255,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2763.83,
             "state_share": 0.0332
@@ -1295,7 +1265,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 2064.55,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 582.17,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1340.29,
             "state_share": 0.0161
@@ -1305,7 +1285,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 507.81,
             "state_share": 0.0061
@@ -1315,7 +1295,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1090.55,
             "state_share": 0.0131
@@ -1325,7 +1305,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 266.39,
             "state_share": 0.0032
@@ -1335,7 +1315,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 416.24,
             "state_share": 0.005
@@ -1345,7 +1325,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 690.96,
             "state_share": 0.0083
@@ -1355,7 +1335,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 457.86,
             "state_share": 0.0055
@@ -1365,7 +1345,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 3221.7,
             "state_share": 0.0387
@@ -1375,7 +1355,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 357.97,
             "state_share": 0.0043
@@ -1395,7 +1375,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2206.07,
             "state_share": 0.0265
@@ -1405,7 +1385,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 166.5,
             "state_share": 0.002
@@ -1415,7 +1395,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2405.87,
             "state_share": 0.0289
@@ -1425,7 +1405,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 591.06,
             "state_share": 0.0071
@@ -1435,7 +1415,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1248.72,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 269.85,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3554.69,
             "state_share": 0.0427
@@ -1445,7 +1435,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 349.64,
             "state_share": 0.0042
@@ -1455,7 +1445,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1132.17,
             "state_share": 0.0136
@@ -1465,7 +1455,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 199.8,
             "state_share": 0.0024
@@ -1475,7 +1465,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1356.94,
             "state_share": 0.0163
@@ -1495,7 +1485,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 557.76,
             "state_share": 0.0067
@@ -1505,7 +1495,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 233.09,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 37.48,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 2089.52,
             "state_share": 0.0251
@@ -1515,7 +1515,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 1997.95,
             "state_share": 0.024
@@ -1525,7 +1525,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 266.39,
             "state_share": 0.0032
@@ -1535,7 +1535,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1140.5,
             "state_share": 0.0137
@@ -1545,7 +1545,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 141.52,
             "state_share": 0.0017
@@ -1563,7 +1563,7 @@
     },
     "2024-04": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 820.0,
             "state_share": 0.0104
@@ -1573,7 +1573,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 197.12,
             "state_share": 0.0025
@@ -1583,7 +1583,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1269.42,
             "state_share": 0.0161
@@ -1593,37 +1593,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1182.69,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 259.12,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 1955.38,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 559.04,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 220.77,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 35.99,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 496.73,
             "state_share": 0.0063
@@ -1643,7 +1613,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1584.8,
             "state_share": 0.0201
@@ -1653,7 +1623,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1174.81,
             "state_share": 0.0149
@@ -1663,7 +1633,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 275.96,
             "state_share": 0.0035
@@ -1673,7 +1643,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 244.42,
             "state_share": 0.0031
@@ -1683,7 +1653,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5172.3,
             "state_share": 0.0656
@@ -1693,7 +1663,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2357.5,
             "state_share": 0.0299
@@ -1703,7 +1673,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 354.81,
             "state_share": 0.0045
@@ -1713,7 +1683,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 331.15,
             "state_share": 0.0042
@@ -1723,7 +1693,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2735.96,
             "state_share": 0.0347
@@ -1733,7 +1703,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1080.19,
             "state_share": 0.0137
@@ -1743,7 +1713,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 685.96,
             "state_share": 0.0087
@@ -1753,7 +1723,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 607.11,
             "state_share": 0.0077
@@ -1763,7 +1733,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 788.46,
             "state_share": 0.01
@@ -1773,7 +1743,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 914.61,
             "state_share": 0.0116
@@ -1783,7 +1753,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 449.42,
             "state_share": 0.0057
@@ -1793,7 +1763,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1821.34,
             "state_share": 0.0231
@@ -1803,7 +1773,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2617.69,
             "state_share": 0.0332
@@ -1813,7 +1783,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 1955.38,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 559.04,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1269.42,
             "state_share": 0.0161
@@ -1823,7 +1803,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 480.96,
             "state_share": 0.0061
@@ -1833,7 +1813,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1032.88,
             "state_share": 0.0131
@@ -1843,7 +1823,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 252.31,
             "state_share": 0.0032
@@ -1853,7 +1833,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 394.23,
             "state_share": 0.005
@@ -1863,7 +1843,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 654.42,
             "state_share": 0.0083
@@ -1873,7 +1853,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 433.65,
             "state_share": 0.0055
@@ -1883,7 +1863,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 3051.34,
             "state_share": 0.0387
@@ -1893,7 +1873,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 339.04,
             "state_share": 0.0043
@@ -1913,7 +1893,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2089.42,
             "state_share": 0.0265
@@ -1923,7 +1903,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 157.69,
             "state_share": 0.002
@@ -1933,7 +1913,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2278.65,
             "state_share": 0.0289
@@ -1943,7 +1923,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 559.81,
             "state_share": 0.0071
@@ -1953,7 +1933,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1182.69,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 259.12,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3366.72,
             "state_share": 0.0427
@@ -1963,7 +1953,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 331.15,
             "state_share": 0.0042
@@ -1973,7 +1963,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1072.31,
             "state_share": 0.0136
@@ -1983,7 +1973,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 189.23,
             "state_share": 0.0024
@@ -1993,7 +1983,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1285.19,
             "state_share": 0.0163
@@ -2013,7 +2003,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 528.27,
             "state_share": 0.0067
@@ -2023,7 +2013,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 220.77,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 35.99,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 1979.03,
             "state_share": 0.0251
@@ -2033,7 +2033,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 1892.3,
             "state_share": 0.024
@@ -2043,7 +2043,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 252.31,
             "state_share": 0.0032
@@ -2053,7 +2053,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1080.19,
             "state_share": 0.0137
@@ -2063,7 +2063,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 134.04,
             "state_share": 0.0017
@@ -2081,7 +2081,7 @@
     },
     "2024-05": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 893.44,
             "state_share": 0.0104
@@ -2091,7 +2091,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 214.77,
             "state_share": 0.0025
@@ -2101,7 +2101,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1383.12,
             "state_share": 0.0161
@@ -2111,37 +2111,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1288.62,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 297.67,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 2130.52,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 642.19,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 240.54,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 41.34,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 541.22,
             "state_share": 0.0063
@@ -2161,7 +2131,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1726.75,
             "state_share": 0.0201
@@ -2171,7 +2141,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1280.03,
             "state_share": 0.0149
@@ -2181,7 +2151,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 300.68,
             "state_share": 0.0035
@@ -2191,7 +2161,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 266.31,
             "state_share": 0.0031
@@ -2201,7 +2171,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5635.56,
             "state_share": 0.0656
@@ -2211,7 +2181,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2568.65,
             "state_share": 0.0299
@@ -2221,7 +2191,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 386.59,
             "state_share": 0.0045
@@ -2231,7 +2201,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 360.81,
             "state_share": 0.0042
@@ -2241,7 +2211,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2981.01,
             "state_share": 0.0347
@@ -2251,7 +2221,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1176.94,
             "state_share": 0.0137
@@ -2261,7 +2231,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 747.4,
             "state_share": 0.0087
@@ -2271,7 +2241,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 661.49,
             "state_share": 0.0077
@@ -2281,7 +2251,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 859.08,
             "state_share": 0.01
@@ -2291,7 +2261,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 996.53,
             "state_share": 0.0116
@@ -2301,7 +2271,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 489.68,
             "state_share": 0.0057
@@ -2311,7 +2281,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1984.47,
             "state_share": 0.0231
@@ -2321,7 +2291,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2852.15,
             "state_share": 0.0332
@@ -2331,7 +2301,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 2130.52,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 642.19,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1383.12,
             "state_share": 0.0161
@@ -2341,7 +2321,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 524.04,
             "state_share": 0.0061
@@ -2351,7 +2331,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1125.39,
             "state_share": 0.0131
@@ -2361,7 +2341,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 274.91,
             "state_share": 0.0032
@@ -2371,7 +2351,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 429.54,
             "state_share": 0.005
@@ -2381,7 +2361,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 713.04,
             "state_share": 0.0083
@@ -2391,7 +2371,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 472.49,
             "state_share": 0.0055
@@ -2401,7 +2381,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 3324.64,
             "state_share": 0.0387
@@ -2411,7 +2391,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 369.4,
             "state_share": 0.0043
@@ -2431,7 +2411,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2276.56,
             "state_share": 0.0265
@@ -2441,7 +2421,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 171.82,
             "state_share": 0.002
@@ -2451,7 +2431,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2482.74,
             "state_share": 0.0289
@@ -2461,7 +2441,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 609.95,
             "state_share": 0.0071
@@ -2471,7 +2451,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1288.62,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 297.67,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3668.27,
             "state_share": 0.0427
@@ -2481,7 +2471,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 360.81,
             "state_share": 0.0042
@@ -2491,7 +2481,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1168.35,
             "state_share": 0.0136
@@ -2501,7 +2491,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 206.18,
             "state_share": 0.0024
@@ -2511,7 +2501,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1400.3,
             "state_share": 0.0163
@@ -2531,7 +2521,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 575.58,
             "state_share": 0.0067
@@ -2541,7 +2531,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 240.54,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 41.34,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 2156.29,
             "state_share": 0.0251
@@ -2551,7 +2551,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 2061.79,
             "state_share": 0.024
@@ -2561,7 +2561,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 274.91,
             "state_share": 0.0032
@@ -2571,7 +2571,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1176.94,
             "state_share": 0.0137
@@ -2581,7 +2581,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 146.04,
             "state_share": 0.0017
@@ -2599,7 +2599,7 @@
     },
     "2024-06": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 861.41,
             "state_share": 0.0104
@@ -2609,7 +2609,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 207.07,
             "state_share": 0.0025
@@ -2619,7 +2619,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1333.53,
             "state_share": 0.0161
@@ -2629,37 +2629,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1242.42,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 271.31,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 2054.13,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 585.32,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 231.92,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 37.68,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 521.82,
             "state_share": 0.0063
@@ -2679,7 +2649,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1664.84,
             "state_share": 0.0201
@@ -2689,7 +2659,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1234.14,
             "state_share": 0.0149
@@ -2699,7 +2669,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 289.9,
             "state_share": 0.0035
@@ -2709,7 +2679,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 256.77,
             "state_share": 0.0031
@@ -2719,7 +2689,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5433.52,
             "state_share": 0.0656
@@ -2729,7 +2699,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2476.56,
             "state_share": 0.0299
@@ -2739,7 +2709,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 372.73,
             "state_share": 0.0045
@@ -2749,7 +2719,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 347.88,
             "state_share": 0.0042
@@ -2759,7 +2729,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2874.13,
             "state_share": 0.0347
@@ -2769,7 +2739,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1134.74,
             "state_share": 0.0137
@@ -2779,7 +2749,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 720.6,
             "state_share": 0.0087
@@ -2789,7 +2759,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 637.78,
             "state_share": 0.0077
@@ -2799,7 +2769,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 828.28,
             "state_share": 0.01
@@ -2809,7 +2779,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 960.8,
             "state_share": 0.0116
@@ -2819,7 +2789,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 472.12,
             "state_share": 0.0057
@@ -2829,7 +2799,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1913.33,
             "state_share": 0.0231
@@ -2839,7 +2809,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2749.89,
             "state_share": 0.0332
@@ -2849,7 +2819,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 2054.13,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 585.32,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1333.53,
             "state_share": 0.0161
@@ -2859,7 +2839,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 505.25,
             "state_share": 0.0061
@@ -2869,7 +2849,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1085.05,
             "state_share": 0.0131
@@ -2879,7 +2859,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 265.05,
             "state_share": 0.0032
@@ -2889,7 +2869,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 414.14,
             "state_share": 0.005
@@ -2899,7 +2879,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 687.47,
             "state_share": 0.0083
@@ -2909,7 +2889,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 455.55,
             "state_share": 0.0055
@@ -2919,7 +2899,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 3205.44,
             "state_share": 0.0387
@@ -2929,7 +2909,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 356.16,
             "state_share": 0.0043
@@ -2949,7 +2929,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2194.94,
             "state_share": 0.0265
@@ -2959,7 +2939,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 165.66,
             "state_share": 0.002
@@ -2969,7 +2949,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2393.73,
             "state_share": 0.0289
@@ -2979,7 +2959,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 588.08,
             "state_share": 0.0071
@@ -2989,7 +2969,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1242.42,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 271.31,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3536.76,
             "state_share": 0.0427
@@ -2999,7 +2989,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 347.88,
             "state_share": 0.0042
@@ -3009,7 +2999,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1126.46,
             "state_share": 0.0136
@@ -3019,7 +3009,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 198.79,
             "state_share": 0.0024
@@ -3029,7 +3019,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1350.1,
             "state_share": 0.0163
@@ -3049,7 +3039,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 554.95,
             "state_share": 0.0067
@@ -3059,7 +3049,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 231.92,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 37.68,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 2078.98,
             "state_share": 0.0251
@@ -3069,7 +3069,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 1987.87,
             "state_share": 0.024
@@ -3079,7 +3079,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 265.05,
             "state_share": 0.0032
@@ -3089,7 +3089,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1134.74,
             "state_share": 0.0137
@@ -3099,7 +3099,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 140.81,
             "state_share": 0.0017
@@ -3117,7 +3117,7 @@
     },
     "2024-07": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 886.42,
             "state_share": 0.0104
@@ -3127,7 +3127,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 213.08,
             "state_share": 0.0025
@@ -3137,7 +3137,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1372.25,
             "state_share": 0.0161
@@ -3147,37 +3147,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1278.49,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 274.89,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 2113.78,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 593.05,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 238.65,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 38.18,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 536.97,
             "state_share": 0.0063
@@ -3197,7 +3167,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1713.18,
             "state_share": 0.0201
@@ -3207,7 +3177,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1269.97,
             "state_share": 0.0149
@@ -3217,7 +3187,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 298.32,
             "state_share": 0.0035
@@ -3227,7 +3197,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 264.22,
             "state_share": 0.0031
@@ -3237,7 +3207,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5591.28,
             "state_share": 0.0656
@@ -3247,7 +3217,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2548.47,
             "state_share": 0.0299
@@ -3257,7 +3227,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 383.55,
             "state_share": 0.0045
@@ -3267,7 +3237,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 357.98,
             "state_share": 0.0042
@@ -3277,7 +3247,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2957.59,
             "state_share": 0.0347
@@ -3287,7 +3257,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1167.69,
             "state_share": 0.0137
@@ -3297,7 +3267,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 741.53,
             "state_share": 0.0087
@@ -3307,7 +3277,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 656.29,
             "state_share": 0.0077
@@ -3317,7 +3287,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 852.33,
             "state_share": 0.01
@@ -3327,7 +3297,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 988.7,
             "state_share": 0.0116
@@ -3337,7 +3307,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 485.83,
             "state_share": 0.0057
@@ -3347,7 +3317,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1968.88,
             "state_share": 0.0231
@@ -3357,7 +3327,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2829.74,
             "state_share": 0.0332
@@ -3367,7 +3337,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 2113.78,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 593.05,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1372.25,
             "state_share": 0.0161
@@ -3377,7 +3357,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 519.92,
             "state_share": 0.0061
@@ -3387,7 +3367,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1116.55,
             "state_share": 0.0131
@@ -3397,7 +3377,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 272.75,
             "state_share": 0.0032
@@ -3407,7 +3387,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 426.16,
             "state_share": 0.005
@@ -3417,7 +3397,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 707.43,
             "state_share": 0.0083
@@ -3427,7 +3407,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 468.78,
             "state_share": 0.0055
@@ -3437,7 +3417,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 3298.52,
             "state_share": 0.0387
@@ -3447,7 +3427,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 366.5,
             "state_share": 0.0043
@@ -3467,7 +3447,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2258.67,
             "state_share": 0.0265
@@ -3477,7 +3457,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 170.47,
             "state_share": 0.002
@@ -3487,7 +3467,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2463.23,
             "state_share": 0.0289
@@ -3497,7 +3477,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 605.15,
             "state_share": 0.0071
@@ -3507,7 +3487,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1278.49,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 274.89,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3639.45,
             "state_share": 0.0427
@@ -3517,7 +3507,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 357.98,
             "state_share": 0.0042
@@ -3527,7 +3517,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1159.17,
             "state_share": 0.0136
@@ -3537,7 +3527,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 204.56,
             "state_share": 0.0024
@@ -3547,7 +3537,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1389.3,
             "state_share": 0.0163
@@ -3567,7 +3557,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 571.06,
             "state_share": 0.0067
@@ -3577,7 +3567,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 238.65,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 38.18,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 2139.35,
             "state_share": 0.0251
@@ -3587,7 +3587,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 2045.59,
             "state_share": 0.024
@@ -3597,7 +3597,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 272.75,
             "state_share": 0.0032
@@ -3607,7 +3607,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1167.69,
             "state_share": 0.0137
@@ -3617,7 +3617,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 144.9,
             "state_share": 0.0017
@@ -3635,7 +3635,7 @@
     },
     "2024-08": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 886.72,
             "state_share": 0.0104
@@ -3645,7 +3645,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 213.16,
             "state_share": 0.0025
@@ -3655,7 +3655,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1372.72,
             "state_share": 0.0161
@@ -3665,37 +3665,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1278.93,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 293.92,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 2114.5,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 634.11,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 238.73,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 40.82,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 537.15,
             "state_share": 0.0063
@@ -3715,7 +3685,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1713.77,
             "state_share": 0.0201
@@ -3725,7 +3695,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1270.4,
             "state_share": 0.0149
@@ -3735,7 +3705,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 298.42,
             "state_share": 0.0035
@@ -3745,7 +3715,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 264.31,
             "state_share": 0.0031
@@ -3755,7 +3725,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5593.19,
             "state_share": 0.0656
@@ -3765,7 +3735,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2549.33,
             "state_share": 0.0299
@@ -3775,7 +3745,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 383.68,
             "state_share": 0.0045
@@ -3785,7 +3755,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 358.1,
             "state_share": 0.0042
@@ -3795,7 +3765,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2958.59,
             "state_share": 0.0347
@@ -3805,7 +3775,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1168.09,
             "state_share": 0.0137
@@ -3815,7 +3785,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 741.78,
             "state_share": 0.0087
@@ -3825,7 +3795,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 656.52,
             "state_share": 0.0077
@@ -3835,7 +3805,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 852.62,
             "state_share": 0.01
@@ -3845,7 +3815,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 989.04,
             "state_share": 0.0116
@@ -3855,7 +3825,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 485.99,
             "state_share": 0.0057
@@ -3865,7 +3835,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1969.55,
             "state_share": 0.0231
@@ -3875,7 +3845,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2830.7,
             "state_share": 0.0332
@@ -3885,7 +3855,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 2114.5,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 634.11,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1372.72,
             "state_share": 0.0161
@@ -3895,7 +3875,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 520.1,
             "state_share": 0.0061
@@ -3905,7 +3885,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1116.93,
             "state_share": 0.0131
@@ -3915,7 +3895,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 272.84,
             "state_share": 0.0032
@@ -3925,7 +3905,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 426.31,
             "state_share": 0.005
@@ -3935,7 +3915,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 707.67,
             "state_share": 0.0083
@@ -3945,7 +3925,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 468.94,
             "state_share": 0.0055
@@ -3955,7 +3935,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 3299.64,
             "state_share": 0.0387
@@ -3965,7 +3945,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 366.63,
             "state_share": 0.0043
@@ -3985,7 +3965,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2259.44,
             "state_share": 0.0265
@@ -3995,7 +3975,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 170.52,
             "state_share": 0.002
@@ -4005,7 +3985,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2464.07,
             "state_share": 0.0289
@@ -4015,7 +3995,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 605.36,
             "state_share": 0.0071
@@ -4025,7 +4005,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1278.93,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 293.92,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3640.69,
             "state_share": 0.0427
@@ -4035,7 +4025,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 358.1,
             "state_share": 0.0042
@@ -4045,7 +4035,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1159.56,
             "state_share": 0.0136
@@ -4055,7 +4045,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 204.63,
             "state_share": 0.0024
@@ -4065,7 +4055,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1389.77,
             "state_share": 0.0163
@@ -4085,7 +4075,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 571.26,
             "state_share": 0.0067
@@ -4095,7 +4085,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 238.73,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 40.82,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 2140.08,
             "state_share": 0.0251
@@ -4105,7 +4105,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 2046.29,
             "state_share": 0.024
@@ -4115,7 +4115,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 272.84,
             "state_share": 0.0032
@@ -4125,7 +4125,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1168.09,
             "state_share": 0.0137
@@ -4135,7 +4135,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 144.95,
             "state_share": 0.0017
@@ -4153,7 +4153,7 @@
     },
     "2024-09": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 844.33,
             "state_share": 0.0104
@@ -4163,7 +4163,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 202.96,
             "state_share": 0.0025
@@ -4173,7 +4173,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1307.09,
             "state_share": 0.0161
@@ -4183,37 +4183,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1217.79,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 249.93,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 2013.41,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 539.21,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 227.32,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 34.71,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 511.47,
             "state_share": 0.0063
@@ -4233,7 +4203,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1631.84,
             "state_share": 0.0201
@@ -4243,7 +4213,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1209.67,
             "state_share": 0.0149
@@ -4253,7 +4223,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 284.15,
             "state_share": 0.0035
@@ -4263,7 +4233,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 251.68,
             "state_share": 0.0031
@@ -4273,7 +4243,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5325.8,
             "state_share": 0.0656
@@ -4283,7 +4253,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2427.46,
             "state_share": 0.0299
@@ -4293,7 +4263,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 365.34,
             "state_share": 0.0045
@@ -4303,7 +4273,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 340.98,
             "state_share": 0.0042
@@ -4313,7 +4283,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2817.15,
             "state_share": 0.0347
@@ -4323,7 +4293,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1112.25,
             "state_share": 0.0137
@@ -4333,7 +4303,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 706.32,
             "state_share": 0.0087
@@ -4343,7 +4313,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 625.13,
             "state_share": 0.0077
@@ -4353,7 +4323,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 811.86,
             "state_share": 0.01
@@ -4363,7 +4333,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 941.76,
             "state_share": 0.0116
@@ -4373,7 +4343,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 462.76,
             "state_share": 0.0057
@@ -4383,7 +4353,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1875.4,
             "state_share": 0.0231
@@ -4393,7 +4363,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2695.38,
             "state_share": 0.0332
@@ -4403,7 +4373,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 2013.41,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 539.21,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1307.09,
             "state_share": 0.0161
@@ -4413,7 +4393,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 495.23,
             "state_share": 0.0061
@@ -4423,7 +4403,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1063.54,
             "state_share": 0.0131
@@ -4433,7 +4413,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 259.8,
             "state_share": 0.0032
@@ -4443,7 +4423,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 405.93,
             "state_share": 0.005
@@ -4453,7 +4433,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 673.84,
             "state_share": 0.0083
@@ -4463,7 +4443,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 446.52,
             "state_share": 0.0055
@@ -4473,7 +4453,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 3141.9,
             "state_share": 0.0387
@@ -4483,7 +4463,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 349.1,
             "state_share": 0.0043
@@ -4503,7 +4483,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2151.43,
             "state_share": 0.0265
@@ -4513,7 +4493,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 162.37,
             "state_share": 0.002
@@ -4523,7 +4503,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2346.28,
             "state_share": 0.0289
@@ -4533,7 +4513,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 576.42,
             "state_share": 0.0071
@@ -4543,7 +4523,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1217.79,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 249.93,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3466.64,
             "state_share": 0.0427
@@ -4553,7 +4543,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 340.98,
             "state_share": 0.0042
@@ -4563,7 +4553,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1104.13,
             "state_share": 0.0136
@@ -4573,7 +4563,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 194.85,
             "state_share": 0.0024
@@ -4583,7 +4573,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1323.33,
             "state_share": 0.0163
@@ -4603,7 +4593,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 543.95,
             "state_share": 0.0067
@@ -4613,7 +4603,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 227.32,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 34.71,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 2037.77,
             "state_share": 0.0251
@@ -4623,7 +4623,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 1948.46,
             "state_share": 0.024
@@ -4633,7 +4633,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 259.8,
             "state_share": 0.0032
@@ -4643,7 +4643,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1112.25,
             "state_share": 0.0137
@@ -4653,7 +4653,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 138.02,
             "state_share": 0.0017
@@ -4671,7 +4671,7 @@
     },
     "2024-10": {
       "states": {
-        "01": {
+        "AL": {
           "445": {
             "sales_value": 880.01,
             "state_share": 0.0104
@@ -4681,7 +4681,7 @@
             "state_share": 0.0124
           }
         },
-        "02": {
+        "AK": {
           "445": {
             "sales_value": 211.54,
             "state_share": 0.0025
@@ -4691,7 +4691,7 @@
             "state_share": 0.0016
           }
         },
-        "04": {
+        "AZ": {
           "445": {
             "sales_value": 1362.32,
             "state_share": 0.0161
@@ -4701,37 +4701,7 @@
             "state_share": 0.0175
           }
         },
-        "41": {
-          "445": {
-            "sales_value": 1269.24,
-            "state_share": 0.015
-          },
-          "448": {
-            "sales_value": 269.67,
-            "state_share": 0.0108
-          }
-        },
-        "26": {
-          "445": {
-            "sales_value": 2098.48,
-            "state_share": 0.0248
-          },
-          "448": {
-            "sales_value": 581.78,
-            "state_share": 0.0233
-          }
-        },
-        "50": {
-          "445": {
-            "sales_value": 236.92,
-            "state_share": 0.0028
-          },
-          "448": {
-            "sales_value": 37.45,
-            "state_share": 0.0015
-          }
-        },
-        "05": {
+        "AR": {
           "445": {
             "sales_value": 533.08,
             "state_share": 0.0063
@@ -4751,7 +4721,7 @@
             "state_share": 0.1445
           }
         },
-        "08": {
+        "CO": {
           "445": {
             "sales_value": 1700.78,
             "state_share": 0.0201
@@ -4761,7 +4731,7 @@
             "state_share": 0.0165
           }
         },
-        "09": {
+        "CT": {
           "445": {
             "sales_value": 1260.78,
             "state_share": 0.0149
@@ -4771,7 +4741,7 @@
             "state_share": 0.0116
           }
         },
-        "10": {
+        "DE": {
           "445": {
             "sales_value": 296.16,
             "state_share": 0.0035
@@ -4781,7 +4751,7 @@
             "state_share": 0.0036
           }
         },
-        "11": {
+        "DC": {
           "445": {
             "sales_value": 262.31,
             "state_share": 0.0031
@@ -4791,7 +4761,7 @@
             "state_share": 0.0025
           }
         },
-        "12": {
+        "FL": {
           "445": {
             "sales_value": 5550.81,
             "state_share": 0.0656
@@ -4801,7 +4771,7 @@
             "state_share": 0.0841
           }
         },
-        "13": {
+        "GA": {
           "445": {
             "sales_value": 2530.02,
             "state_share": 0.0299
@@ -4811,7 +4781,7 @@
             "state_share": 0.0307
           }
         },
-        "15": {
+        "HI": {
           "445": {
             "sales_value": 380.77,
             "state_share": 0.0045
@@ -4821,7 +4791,7 @@
             "state_share": 0.009
           }
         },
-        "16": {
+        "ID": {
           "445": {
             "sales_value": 355.39,
             "state_share": 0.0042
@@ -4831,7 +4801,7 @@
             "state_share": 0.0034
           }
         },
-        "17": {
+        "IL": {
           "445": {
             "sales_value": 2936.18,
             "state_share": 0.0347
@@ -4841,7 +4811,7 @@
             "state_share": 0.0373
           }
         },
-        "18": {
+        "IN": {
           "445": {
             "sales_value": 1159.24,
             "state_share": 0.0137
@@ -4851,7 +4821,7 @@
             "state_share": 0.0136
           }
         },
-        "19": {
+        "IA": {
           "445": {
             "sales_value": 736.16,
             "state_share": 0.0087
@@ -4861,7 +4831,7 @@
             "state_share": 0.007
           }
         },
-        "20": {
+        "KS": {
           "445": {
             "sales_value": 651.54,
             "state_share": 0.0077
@@ -4871,7 +4841,7 @@
             "state_share": 0.0065
           }
         },
-        "21": {
+        "KY": {
           "445": {
             "sales_value": 846.16,
             "state_share": 0.01
@@ -4881,7 +4851,7 @@
             "state_share": 0.0089
           }
         },
-        "22": {
+        "LA": {
           "445": {
             "sales_value": 981.55,
             "state_share": 0.0116
@@ -4891,7 +4861,7 @@
             "state_share": 0.0129
           }
         },
-        "23": {
+        "ME": {
           "445": {
             "sales_value": 482.31,
             "state_share": 0.0057
@@ -4901,7 +4871,7 @@
             "state_share": 0.0033
           }
         },
-        "24": {
+        "MD": {
           "445": {
             "sales_value": 1954.63,
             "state_share": 0.0231
@@ -4911,7 +4881,7 @@
             "state_share": 0.0181
           }
         },
-        "25": {
+        "MA": {
           "445": {
             "sales_value": 2809.25,
             "state_share": 0.0332
@@ -4921,7 +4891,17 @@
             "state_share": 0.0258
           }
         },
-        "27": {
+        "MI": {
+          "445": {
+            "sales_value": 2098.48,
+            "state_share": 0.0248
+          },
+          "448": {
+            "sales_value": 581.78,
+            "state_share": 0.0233
+          }
+        },
+        "MN": {
           "445": {
             "sales_value": 1362.32,
             "state_share": 0.0161
@@ -4931,7 +4911,7 @@
             "state_share": 0.0139
           }
         },
-        "28": {
+        "MS": {
           "445": {
             "sales_value": 516.16,
             "state_share": 0.0061
@@ -4941,7 +4921,7 @@
             "state_share": 0.0077
           }
         },
-        "29": {
+        "MO": {
           "445": {
             "sales_value": 1108.47,
             "state_share": 0.0131
@@ -4951,7 +4931,7 @@
             "state_share": 0.0142
           }
         },
-        "30": {
+        "MT": {
           "445": {
             "sales_value": 270.77,
             "state_share": 0.0032
@@ -4961,7 +4941,7 @@
             "state_share": 0.0022
           }
         },
-        "31": {
+        "NE": {
           "445": {
             "sales_value": 423.08,
             "state_share": 0.005
@@ -4971,7 +4951,7 @@
             "state_share": 0.0045
           }
         },
-        "32": {
+        "NV": {
           "445": {
             "sales_value": 702.31,
             "state_share": 0.0083
@@ -4981,7 +4961,7 @@
             "state_share": 0.015
           }
         },
-        "33": {
+        "NH": {
           "445": {
             "sales_value": 465.39,
             "state_share": 0.0055
@@ -4991,7 +4971,7 @@
             "state_share": 0.0047
           }
         },
-        "34": {
+        "NJ": {
           "445": {
             "sales_value": 3274.64,
             "state_share": 0.0387
@@ -5001,7 +4981,7 @@
             "state_share": 0.0343
           }
         },
-        "35": {
+        "NM": {
           "445": {
             "sales_value": 363.85,
             "state_share": 0.0043
@@ -5021,7 +5001,7 @@
             "state_share": 0.0919
           }
         },
-        "37": {
+        "NC": {
           "445": {
             "sales_value": 2242.32,
             "state_share": 0.0265
@@ -5031,7 +5011,7 @@
             "state_share": 0.0269
           }
         },
-        "38": {
+        "ND": {
           "445": {
             "sales_value": 169.23,
             "state_share": 0.002
@@ -5041,7 +5021,7 @@
             "state_share": 0.0019
           }
         },
-        "39": {
+        "OH": {
           "445": {
             "sales_value": 2445.4,
             "state_share": 0.0289
@@ -5051,7 +5031,7 @@
             "state_share": 0.026
           }
         },
-        "40": {
+        "OK": {
           "445": {
             "sales_value": 600.77,
             "state_share": 0.0071
@@ -5061,7 +5041,17 @@
             "state_share": 0.0083
           }
         },
-        "42": {
+        "OR": {
+          "445": {
+            "sales_value": 1269.24,
+            "state_share": 0.015
+          },
+          "448": {
+            "sales_value": 269.67,
+            "state_share": 0.0108
+          }
+        },
+        "PA": {
           "445": {
             "sales_value": 3613.1,
             "state_share": 0.0427
@@ -5071,7 +5061,7 @@
             "state_share": 0.0317
           }
         },
-        "44": {
+        "RI": {
           "445": {
             "sales_value": 355.39,
             "state_share": 0.0042
@@ -5081,7 +5071,7 @@
             "state_share": 0.0033
           }
         },
-        "45": {
+        "SC": {
           "445": {
             "sales_value": 1150.78,
             "state_share": 0.0136
@@ -5091,7 +5081,7 @@
             "state_share": 0.0147
           }
         },
-        "46": {
+        "SD": {
           "445": {
             "sales_value": 203.08,
             "state_share": 0.0024
@@ -5101,7 +5091,7 @@
             "state_share": 0.0021
           }
         },
-        "47": {
+        "TN": {
           "445": {
             "sales_value": 1379.24,
             "state_share": 0.0163
@@ -5121,7 +5111,7 @@
             "state_share": 0.083
           }
         },
-        "49": {
+        "UT": {
           "445": {
             "sales_value": 566.93,
             "state_share": 0.0067
@@ -5131,7 +5121,17 @@
             "state_share": 0.0084
           }
         },
-        "51": {
+        "VT": {
+          "445": {
+            "sales_value": 236.92,
+            "state_share": 0.0028
+          },
+          "448": {
+            "sales_value": 37.45,
+            "state_share": 0.0015
+          }
+        },
+        "VA": {
           "445": {
             "sales_value": 2123.86,
             "state_share": 0.0251
@@ -5141,7 +5141,7 @@
             "state_share": 0.0229
           }
         },
-        "53": {
+        "WA": {
           "445": {
             "sales_value": 2030.78,
             "state_share": 0.024
@@ -5151,7 +5151,7 @@
             "state_share": 0.0182
           }
         },
-        "54": {
+        "WV": {
           "445": {
             "sales_value": 270.77,
             "state_share": 0.0032
@@ -5161,7 +5161,7 @@
             "state_share": 0.0027
           }
         },
-        "55": {
+        "WI": {
           "445": {
             "sales_value": 1159.24,
             "state_share": 0.0137
@@ -5171,7 +5171,7 @@
             "state_share": 0.0117
           }
         },
-        "56": {
+        "WY": {
           "445": {
             "sales_value": 143.85,
             "state_share": 0.0017

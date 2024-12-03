@@ -6,7 +6,7 @@ from typing import Any
 from retail_data_sources.fred.classifier import FREDDataClassifier
 from retail_data_sources.fred.constants import SERIES_MAPPING
 from retail_data_sources.fred.fetcher import FREDDataFetcher
-from retail_data_sources.fred.models.metric import FREDData
+from retail_data_sources.fred.models.economic_metrics import FREDData
 from retail_data_sources.fred.transformer import FREDTransformer
 
 logger = logging.getLogger(__name__)
@@ -74,7 +74,7 @@ class FREDAPIHandler:
 
             # Step 3: Classify data
             classified_data = self.classifier.classify_data(transformed_data)
-            with open("../../samples/fred/classified_data.json", "w") as f:
+            with open("./fred/classified_data.json", "w") as f:
                 json.dump(classified_data, f, indent=2)
             if not classified_data:
                 logger.error("Data classification failed")
