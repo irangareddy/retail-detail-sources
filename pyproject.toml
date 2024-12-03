@@ -31,6 +31,8 @@ pytest-html = "^4.1.1"
 pytest-memray = { version = "^1.7.0",  markers = "platform_system != 'Windows'" }
 ruff = "^0.6.1"
 safety = "^1.10.3"
+types-pytz = "^2024.2.0.20241003"
+types-requests = "^2.32.0.20241016"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]

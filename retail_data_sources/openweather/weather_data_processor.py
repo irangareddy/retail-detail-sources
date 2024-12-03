@@ -3,6 +3,7 @@
 import json
 import logging
 import os
+from json import JSONDecodeError
 
 import requests
 
@@ -23,8 +24,8 @@ class WeatherDataProcessor:
         self.base_url = "https://history.openweathermap.org/data/2.5/aggregated/month"
         self.us_states = {
             "CA": (36.7783, -119.4179),
-            # "NY": (42.1497, -74.9384),
-            # "TX": (31.9686, -99.9018),
+            "NY": (42.1497, -74.9384),
+            "TX": (31.9686, -99.9018),
         }
         self.months = range(1, 3)
 
@@ -36,7 +37,7 @@ class WeatherDataProcessor:
             response.raise_for_status()
             data = response.json()
 
-            if data["cod"] != 200:
+            if data["cod"] != requests.status_codes.codes.OK:
                 logger.info(
                     f"OpenWeather API Error ({data['cod']}): {data.get('message', 'Unknown error')}"
                 )
@@ -79,7 +80,7 @@ class WeatherDataProcessor:
         except (KeyError, json.JSONDecodeError) as e:
             logger.info(f"Data Parsing Error: {e}")
             return None
-        except Exception as e:
+        except JSONDecodeError as e:
             logger.info(f"An unexpected error occurred: {e}")
             return None
 

@@ -4,12 +4,11 @@ import logging
 import os
 from pathlib import Path
 
-from utils.constants import SERIES_MAPPING
-
 from retail_data_sources.fred.classifier import FREDDataClassifier
 from retail_data_sources.fred.fetcher import FREDDataFetcher
 from retail_data_sources.fred.models.economic_metrics import EconomicData
 from retail_data_sources.fred.transformer import FREDTransformer
+from retail_data_sources.utils.constants import SERIES_MAPPING
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +28,7 @@ class FREDAPIHandler:
             raise ValueError("FRED API key must be provided")
 
         self.base_dir = base_dir
-        os.makedirs(self.base_dir, exist_ok=True)
+        Path.mkdir(Path(self.base_dir), exist_ok=True)
 
         # Initialize components
         self.fetcher = FREDDataFetcher(self.api_key, self.base_dir)
@@ -39,7 +38,7 @@ class FREDAPIHandler:
     def fetch_all_series(self) -> dict[str, bool]:
         """Fetch all configured FRED series data."""
         results = {}
-        for series_id in SERIES_MAPPING.keys():
+        for series_id in SERIES_MAPPING:
             try:
                 data = self.fetcher.fetch_series(series_id)
                 results[SERIES_MAPPING[series_id]] = data is not None
@@ -60,7 +59,7 @@ class FREDAPIHandler:
             except Exception:
                 logger.exception("Error cleaning up temporary files")
 
-    def process_data(self, fetch: bool = True) -> EconomicData:
+    def process_data(self, fetch: bool = True) -> EconomicData | None:
         """Process FRED data through the entire pipeline."""
         try:
             # Step 1: Fetch data if requested
@@ -81,18 +80,17 @@ class FREDAPIHandler:
 
             # Clean up temporary files after successful processing
             self._cleanup_tmp_files()
-            economic_data = EconomicData.from_dict(classified_data)
-            return economic_data
+            return EconomicData.from_dict(classified_data)
 
-        except Exception as e:
-            logger.error(f"Error in data processing pipeline: {e}")
+        except Exception:
+            logger.exception("Error in data processing pipeline")
             # Attempt to clean up temporary files even if processing failed
             self._cleanup_tmp_files()
             return None
 
 
 def main() -> None:
-    """Main function to demonstrate usage of the FRED API handler."""
+    """Usage of the FRED API handler."""
     # Example usage
     handler = FREDAPIHandler(api_key=None)
     economic_data = handler.process_data(fetch=True)

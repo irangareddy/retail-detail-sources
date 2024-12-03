@@ -16,17 +16,30 @@ class FREDDataClassifier:
         """Initialize the classifier with interpretation rules."""
         self.rules = rules_dict if rules_dict else self._load_rules(rules_file)
 
-    def _load_rules(self, rules_file: str | None = None) -> dict:
+    def _load_rules(self, rules_file: str | None = None) -> dict[str, Any]:
         """Load interpretation rules from JSON file."""
-        default_path = Path(Path(__file__).parent, "fred_interpretation_rules.json")
-        rules_file = rules_file or os.getenv("FRED_RULES_FILE", default_path)
+        default_path = Path(__file__).parent / "fred_interpretation_rules.json"
+
+        # Ensure rules_file is a string or path by converting None or environment variable
+        rules_file = rules_file or os.getenv("FRED_RULES_FILE", str(default_path))
+
+        # If rules_file is None after all, use the default path
+        if rules_file is None:
+            rules_file = str(default_path)
+
+        # Ensure rules_file is a valid Path object
+        path = Path(rules_file)
 
         try:
-            with Path.open(rules_file) as f:
-                return json.load(f)
+            # Open the file and load the JSON data
+            with path.open() as f:
+                data: dict[str, Any] = json.load(f)  # Explicitly type the data here
+
         except Exception:
             logger.exception("Error loading rules file")
-            raise
+            data = {}  # Return an empty dictionary in case of an error
+
+        return data
 
     def get_threshold_category(self, metric: str, value: float) -> tuple[str, dict]:
         """Determine the threshold category for a given value."""

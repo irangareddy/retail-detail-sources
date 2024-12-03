@@ -7,7 +7,8 @@ from pathlib import Path
 from typing import Any
 
 import requests
-from utils.constants import EASTERN, SERIES_MAPPING
+
+from retail_data_sources.utils.constants import EASTERN, SERIES_MAPPING
 
 logger = logging.getLogger(__name__)
 
@@ -42,7 +43,7 @@ class FREDDataFetcher:
         try:
             response = requests.get(self.base_url, params=params, timeout=10)
             response.raise_for_status()
-            data = response.json()
+            data: dict[str, Any] = response.json()
 
             # Save the fetched data
             output_file = self._get_output_filename(series_id)
@@ -57,12 +58,16 @@ class FREDDataFetcher:
     def _get_output_filename(self, series_id: str) -> str:
         """Generate temporary output filename based on series ID."""
         base_name = SERIES_MAPPING.get(series_id, series_id.lower())
+
         # Create a temporary directory if it doesn't exist
         tmp_dir = Path(self.output_dir, "tmp")
-        Path.mkdir(tmp_dir, exist_ok=True)
+        tmp_dir.mkdir(exist_ok=True)
+
         # Use a timestamp to ensure uniqueness but prefix with tmp_
         timestamp = datetime.now(EASTERN).strftime("%Y%m%d_%H%M%S")
-        return Path(tmp_dir, f"tmp_{base_name}_{timestamp}.json")
+
+        # Return the path as a string
+        return str(tmp_dir / f"tmp_{base_name}_{timestamp}.json")
 
     def _save_to_json(self, data: dict[str, Any], output_file: str) -> bool:
         """Save the data to a JSON file."""
@@ -71,7 +76,9 @@ class FREDDataFetcher:
             with Path.open(Path(output_file), "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2)
             logger.info(f"Data successfully saved to {output_file}")
-            return True
-        except OSError as e:
-            logger.error(f"Error saving data: {e}")
+
+        except Exception:
+            logger.exception("Error saving data")
             return False
+        else:
+            return True

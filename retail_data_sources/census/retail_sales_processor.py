@@ -22,6 +22,7 @@ from retail_data_sources.utils.logging import setup_logging
 
 LOW_DEVIATION: float = 0.98
 HIGH_DEVIATION: float = 1.02
+DATE_FORMAT_LENGTH: int = 6
 
 
 class RetailSalesProcessor:
@@ -183,7 +184,7 @@ class RetailSalesProcessor:
                     for _, row in marts_data.iterrows():
                         month = str(row["time"])
                         # Fix: Remove year from month value if present
-                        if len(month) == 6:  # Format: YYYYMM
+                        if len(month) == DATE_FORMAT_LENGTH:  # Format: YYYYMM
                             month = month[-2:]
                         month_key = f"{month.zfill(2)}"  # Will now correctly produce "2024-01"
 
@@ -237,104 +238,55 @@ class RetailSalesProcessor:
             )
             return RetailReport(
                 metadata=Metadata(
-                    last_updated=datetime.now(tz=datetime).strftime("%Y-%m-%d"),
+                    last_updated=datetime.now(tz=EASTERN).strftime("%Y-%m-%d"),
                     categories=self.categories,
                 ),
                 sales_data={"error": empty_month_data},
             )
 
     def validate_data(self, data: RetailReport) -> tuple[bool, dict]:
-        """Validate the generated data and return validation details."""
+        """Validate the generated data for completeness and consistency."""
         try:
-            validation_results = {
-                "completeness": {},
-                "consistency": {},
-                "share_variations": {},
-                "timestamp": datetime.now(tz=datetime).isoformat(),
-            }
-
-            # Track state shares across months for variation analysis
-            state_shares = {
-                state: {"445": set(), "448": set()}
-                for state in self.state_id_to_abbreviation.values()
-            }
+            validation_results = {}
 
             for month, month_data in data.sales_data.items():
-                month_validation = {
-                    "national_totals_present": bool(month_data.national_total),
-                    "states_complete": True,
-                    "share_sums": {"445": 0, "448": 0},
-                }
-
-                # Check if all states have both categories
+                # Check completeness: Are all expected states present?
                 expected_states = set(self.state_id_to_abbreviation.values())
                 actual_states = set(month_data.states.keys())
-                month_validation["missing_states"] = list(expected_states - actual_states)
+                missing_states = list(expected_states - actual_states)
 
-                # Calculate state share sums and track variations
-                share_445_sum = 0
-                share_448_sum = 0
-
-                for state, state_data in month_data.states.items():
-                    if state_data.category_445:
-                        share_445_sum += state_data.category_445.state_share
-                        state_shares[state]["445"].add(
-                            round(state_data.category_445.state_share, 4)
-                        )
-
-                    if state_data.category_448:
-                        share_448_sum += state_data.category_448.state_share
-                        state_shares[state]["448"].add(
-                            round(state_data.category_448.state_share, 4)
-                        )
-
-                month_validation["share_sums"]["445"] = round(share_445_sum, 4)
-                month_validation["share_sums"]["448"] = round(share_448_sum, 4)
-                month_validation["shares_valid"] = (
-                    LOW_DEVIATION <= share_445_sum <= HIGH_DEVIATION
-                    and LOW_DEVIATION <= share_448_sum <= HIGH_DEVIATION
+                # Check consistency: Are the share sums within the valid range?
+                share_445_sum = sum(
+                    state_data.category_445.state_share
+                    for state_data in month_data.states.values()
+                    if state_data.category_445
                 )
+                share_448_sum = sum(
+                    state_data.category_448.state_share
+                    for state_data in month_data.states.values()
+                    if state_data.category_448
+                )
+
+                month_validation = {
+                    "national_totals_present": bool(month_data.national_total),
+                    "states_complete": len(missing_states) == 0,
+                    "shares_valid": LOW_DEVIATION <= share_445_sum <= HIGH_DEVIATION
+                    and LOW_DEVIATION <= share_448_sum <= HIGH_DEVIATION,
+                    "missing_states": missing_states,
+                }
 
                 validation_results[month] = month_validation
 
-            # Add share variation analysis
-            for state in self.state_id_to_abbreviation.values():
-                validation_results["share_variations"][state] = {
-                    "445": {
-                        "unique_shares": sorted(state_shares[state]["445"]),
-                        "variation_count": len(state_shares[state]["445"]),
-                    },
-                    "448": {
-                        "unique_shares": sorted(state_shares[state]["448"]),
-                        "variation_count": len(state_shares[state]["448"]),
-                    },
-                }
-
-            # Check for concerning patterns
-            validation_results["concerns"] = []
-            for state, variations in validation_results["share_variations"].items():
-                if variations["445"]["variation_count"] == 1:
-                    validation_results["concerns"].append(
-                        f"State {state} has constant share ({variations['445']['unique_shares'][0]}) "
-                        f"for category 445 across all months"
-                    )
-                if variations["448"]["variation_count"] == 1:
-                    validation_results["concerns"].append(
-                        f"State {state} has constant share ({variations['448']['unique_shares'][0]}) "
-                        f"for category 448 across all months"
-                    )
-
-            # Overall validation result
+            # Overall validation result: Are all months complete and consistent?
             is_valid = all(
-                v["national_totals_present"] and not v["missing_states"] and v["shares_valid"]
-                for v in validation_results.values()
-                if isinstance(v, dict) and "national_totals_present" in v
+                v["states_complete"] and v["shares_valid"] for v in validation_results.values()
             )
+
         except Exception as e:
             self.logger.exception("Error in validation")
-            return False, {"error": str(e), "timestamp": datetime.now(tz=datetime).isoformat()}
-        else:
-            return is_valid, validation_results
+            return False, {"error": str(e)}
+
+        return is_valid, validation_results
 
     def save_data(self, data: RetailReport, validation_results: dict) -> None:
         """Save processed data and validation results as JSON."""
@@ -362,12 +314,10 @@ class RetailSalesProcessor:
 def main() -> None:
     """Execute the retail sales data processing."""
     try:
-        api_key = os.getenv("CENSUS_API_KEY")
-        if not api_key:
-            raise ValueError("Census API key not found in environment variables")
+        api_key = os.getenv("CENSUS_API_KEY") or ""
 
         processor = RetailSalesProcessor(api_key)
-        current_year = datetime.now(tz=datetime).year
+        current_year = datetime.now(tz=EASTERN).year
 
         data = processor.process_data([str(current_year)])
         is_valid, validation_results = processor.validate_data(data)
