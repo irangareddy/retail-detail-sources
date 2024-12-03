@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class EconomicMetric:
     """Base model for a single economic metric."""

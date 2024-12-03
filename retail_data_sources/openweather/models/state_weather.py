@@ -1,8 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Dict, Any, Optional
 
-from dataclasses import dataclass, field
-from typing import Dict
 
 @dataclass
 class WeatherStatistics:
@@ -31,4 +28,4 @@ class MonthlyWeatherStats:
 @dataclass
 class StateWeather:
     state_name: str  # Name of the state (e.g., "California")
-    monthly_weather: Dict[int, MonthlyWeatherStats] = field(default_factory=dict)
+    monthly_weather: dict[int, MonthlyWeatherStats] = field(default_factory=dict)

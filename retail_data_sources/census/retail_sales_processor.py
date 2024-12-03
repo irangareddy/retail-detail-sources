@@ -1,15 +1,17 @@
 import json
 import os
 from datetime import datetime
+
 import pandas as pd
 import requests
+
 from retail_data_sources.census.models.retail_sales import (
-    RetailReport,
-    MonthData,
-    StateData,
-    Sales,
     CategoryTotal,
-    Metadata
+    Metadata,
+    MonthData,
+    RetailReport,
+    Sales,
+    StateData,
 )
 from retail_data_sources.utils.logging import setup_logging
 

@@ -1,7 +1,5 @@
-import json
 import logging
 import os
-from typing import Any
 
 from retail_data_sources.fred.classifier import FREDDataClassifier
 from retail_data_sources.fred.constants import SERIES_MAPPING

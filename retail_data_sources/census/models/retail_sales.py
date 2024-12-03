@@ -1,7 +1,6 @@
 """census.models.retail_sales"""
 
-from dataclasses import dataclass, field
-from typing import Dict, Optional
+from dataclasses import dataclass
 
 
 @dataclass
@@ -9,7 +8,7 @@ class Sales:
     sales_value: float
     state_share: float
 
-    def to_dict(self) -> Dict[str, float]:
+    def to_dict(self) -> dict[str, float]:
         """Convert to dictionary ensuring Python float types."""
         return {
             "sales_value": float(self.sales_value),
@@ -19,10 +18,10 @@ class Sales:
 
 @dataclass
 class StateData:
-    category_445: Optional[Sales] = None
-    category_448: Optional[Sales] = None
+    category_445: Sales | None = None
+    category_448: Sales | None = None
 
-    def to_dict(self) -> Dict[str, Optional[Dict[str, float]]]:
+    def to_dict(self) -> dict[str, dict[str, float] | None]:
         """Convert to dictionary with category codes as keys."""
         return {
             "445": None if self.category_445 is None else self.category_445.to_dict(),
@@ -35,7 +34,7 @@ class CategoryTotal:
     category_445: float
     category_448: float
 
-    def to_dict(self) -> Dict[str, float]:
+    def to_dict(self) -> dict[str, float]:
         """Convert to dictionary ensuring Python float types."""
         return {
             "445": float(self.category_445),
@@ -45,22 +44,25 @@ class CategoryTotal:
 @dataclass
 class MonthData:
     """Data for a specific month."""
-    states: Dict[str, StateData]  # state_code -> StateData
+
+    states: dict[str, StateData]  # state_code -> StateData
     national_total: CategoryTotal
 
 
 @dataclass
 class Metadata:
     """Metadata for the retail report."""
+
     last_updated: str
-    categories: Dict[str, str]
+    categories: dict[str, str]
 
 
 @dataclass
 class RetailReport:
     """Complete retail sales report."""
+
     metadata: Metadata
-    sales_data: Dict[str, MonthData]  # month -> MonthData
+    sales_data: dict[str, MonthData]  # month -> MonthData
 
     def to_dict(self) -> dict:
         """Convert entire report to dictionary format."""

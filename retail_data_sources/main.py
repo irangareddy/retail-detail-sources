@@ -1,12 +1,12 @@
 """Retail data sources main module."""
 
 import os
-import json
 from datetime import datetime
 
-from retail_data_sources.fred.fred_api_handler import FREDAPIHandler
 from retail_data_sources.census.retail_sales_processor import RetailSalesProcessor
+from retail_data_sources.fred.fred_api_handler import FREDAPIHandler
 from retail_data_sources.openweather.weather_data_processor import WeatherDataProcessor
+
 
 class DataFetcher:
     def __init__(self):
