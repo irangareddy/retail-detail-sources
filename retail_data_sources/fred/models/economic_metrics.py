@@ -1,10 +1,7 @@
-"""Models for economic metrics."""
-
 from dataclasses import dataclass
 
-
 @dataclass
-class Metric:
+class EconomicMetric:
     """Base model for a single economic metric."""
 
     value: float | None
@@ -15,16 +12,16 @@ class Metric:
 
 
 @dataclass
-class EconomicMetrics:
+class MonthlyEconomicIndicators:
     """Monthly economic indicators."""
 
     date: str  # YYYY-MM
-    consumer_confidence: Metric
-    unemployment_rate: Metric
-    inflation_rate: Metric
-    gdp_growth_rate: Metric
-    federal_funds_rate: Metric
-    retail_sales: Metric
+    consumer_confidence: EconomicMetric
+    unemployment_rate: EconomicMetric
+    inflation_rate: EconomicMetric
+    gdp_growth_rate: EconomicMetric
+    federal_funds_rate: EconomicMetric
+    retail_sales: EconomicMetric
 
     def to_dict(self) -> dict:
         """Convert to dictionary format."""
@@ -55,24 +52,24 @@ class EconomicMetrics:
 
 
 @dataclass
-class FREDData:
+class EconomicData:
     """Collection of monthly economic metrics."""
 
-    metrics: list[EconomicMetrics]
+    metrics: list[MonthlyEconomicIndicators]
 
     @classmethod
-    def from_dict(cls, data: dict) -> "FREDData":
-        """Create FREDData from dictionary format."""
+    def from_dict(cls, data: dict) -> "EconomicData":
+        """Create EconomicData from dictionary format."""
         metrics_list = []
         for date, metrics in data.items():
-            monthly_metrics = EconomicMetrics(
+            monthly_metrics = MonthlyEconomicIndicators(
                 date=date,
-                consumer_confidence=Metric(**metrics["consumer_confidence"]),
-                unemployment_rate=Metric(**metrics["unemployment_rate"]),
-                inflation_rate=Metric(**metrics["inflation_rate"]),
-                gdp_growth_rate=Metric(**metrics["gdp_growth_rate"]),
-                federal_funds_rate=Metric(**metrics["federal_funds_rate"]),
-                retail_sales=Metric(**metrics["retail_sales"]),
+                consumer_confidence=EconomicMetric(**metrics["consumer_confidence"]),
+                unemployment_rate=EconomicMetric(**metrics["unemployment_rate"]),
+                inflation_rate=EconomicMetric(**metrics["inflation_rate"]),
+                gdp_growth_rate=EconomicMetric(**metrics["gdp_growth_rate"]),
+                federal_funds_rate=EconomicMetric(**metrics["federal_funds_rate"]),
+                retail_sales=EconomicMetric(**metrics["retail_sales"]),
             )
             metrics_list.append(monthly_metrics)
         return cls(metrics=sorted(metrics_list, key=lambda x: x.date))

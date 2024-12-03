@@ -6,17 +6,16 @@ from typing import Any
 from retail_data_sources.fred.classifier import FREDDataClassifier
 from retail_data_sources.fred.constants import SERIES_MAPPING
 from retail_data_sources.fred.fetcher import FREDDataFetcher
-from retail_data_sources.fred.models.economic_metrics import FREDData
+from retail_data_sources.fred.models.economic_metrics import EconomicData
 from retail_data_sources.fred.transformer import FREDTransformer
 
 logger = logging.getLogger(__name__)
-
 
 class FREDAPIHandler:
     def __init__(
         self,
         api_key: str = None,
-        base_dir: str = "data",
+        base_dir: str = "tmp/fred",
         rules_file: str = None,
         rules_dict: dict = None,
     ):
@@ -56,7 +55,7 @@ class FREDAPIHandler:
             except Exception as e:
                 logger.error(f"Error cleaning up temporary files: {e}")
 
-    def process_data(self, fetch: bool = True) -> FREDData:
+    def process_data(self, fetch: bool = True) -> EconomicData:
         """Process FRED data through the entire pipeline."""
         try:
             # Step 1: Fetch data if requested
@@ -74,16 +73,11 @@ class FREDAPIHandler:
 
             # Step 3: Classify data
             classified_data = self.classifier.classify_data(transformed_data)
-            with open("./fred/classified_data.json", "w") as f:
-                json.dump(classified_data, f, indent=2)
-            if not classified_data:
-                logger.error("Data classification failed")
-                return None
 
             # Clean up temporary files after successful processing
             self._cleanup_tmp_files()
-            fred_data = FREDData.from_dict(classified_data)
-            return fred_data
+            economic_data = EconomicData.from_dict(classified_data)
+            return economic_data
 
         except Exception as e:
             logger.error(f"Error in data processing pipeline: {e}")
@@ -91,25 +85,13 @@ class FREDAPIHandler:
             self._cleanup_tmp_files()
             return None
 
-    def save_data(self, data: dict[str, Any], filepath: str) -> bool:
-        """Save data to JSON file."""
-        try:
-            os.makedirs(os.path.dirname(filepath), exist_ok=True)
-            with open(filepath, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=2)
-            logger.info(f"Successfully saved data to {filepath}")
-            return True
-        except Exception as e:
-            logger.error(f"Error saving data to {filepath}: {e}")
-            return False
-
 
 def main():
     # Example usage
     handler = FREDAPIHandler(api_key=None)
-    fred_data = handler.process_data(fetch=True)
-    if fred_data:
-        print(fred_data)
+    economic_data = handler.process_data(fetch=True)
+    if economic_data:
+        print(economic_data)
 
 
 if __name__ == "__main__":
