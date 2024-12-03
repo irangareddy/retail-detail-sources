@@ -3,9 +3,12 @@
 import json
 import os
 from datetime import datetime
+from pathlib import Path
+from typing import ClassVar
 
 import pandas as pd
 import requests
+from utils.constants import EASTERN
 
 from retail_data_sources.census.models.retail_sales import (
     CategoryTotal,
@@ -17,11 +20,14 @@ from retail_data_sources.census.models.retail_sales import (
 )
 from retail_data_sources.utils.logging import setup_logging
 
+LOW_DEVIATION: float = 0.98
+HIGH_DEVIATION: float = 1.02
+
 
 class RetailSalesProcessor:
     """Retail sales data processor using Census API."""
 
-    state_id_to_abbreviation: {str: str} = {
+    state_id_to_abbreviation: ClassVar[dict[str, str]] = {
         "01": "AL",
         "02": "AK",
         "04": "AZ",
@@ -101,12 +107,11 @@ class RetailSalesProcessor:
             df = pd.DataFrame(data[1:], columns=data[0])
             sales_df = df[(df["data_type_code"] == "SM") & (df["seasonally_adj"] == "no")].copy()
             sales_df["cell_value"] = pd.to_numeric(sales_df["cell_value"])
-
-            return sales_df
-
-        except Exception as e:
-            self.logger.error(f"Error fetching MARTS data for {year}, category {category}: {e}")
+        except Exception:
+            self.logger.exception(f"Error fetching MARTS data for {year}, category {category}")
             return pd.DataFrame()
+        else:
+            return sales_df
 
     def fetch_cbp_data(self, category: str) -> dict[str, dict[str, float]]:
         """Fetch and process CBP data for state weights."""
@@ -145,12 +150,11 @@ class RetailSalesProcessor:
                     "establishments": int(row["ESTAB"]),
                     "annual_payroll": int(row["PAYANN"]),
                 }
-
-            return state_weights
-
-        except Exception as e:
-            self.logger.error(f"Error fetching CBP data for category {category}: {e}")
+        except Exception:
+            self.logger.exception(f"Error fetching CBP data for category {category}")
             return {}
+        else:
+            return state_weights
 
     def calculate_state_sales(
         self, national_sales: float, state_weights: dict[str, dict[str, float]]
@@ -161,8 +165,8 @@ class RetailSalesProcessor:
             state_sales[state_code] = round(national_sales * state_data["weight"], 2)
         return state_sales
 
-    def process_retail_data(self, years: list[str]) -> RetailReport:
-        """Main processing function to generate retail sales report."""
+    def process_data(self, years: list[str]) -> RetailReport:
+        """Process retail sales report."""
         try:
             sales_data = {}
 
@@ -220,19 +224,21 @@ class RetailSalesProcessor:
                                 sales_data[month_key].states[state_abbr].category_448 = sales_obj
 
             metadata = Metadata(
-                last_updated=datetime.now().strftime("%Y-%m-%d"), categories=self.categories
+                last_updated=datetime.now(tz=EASTERN).strftime("%Y-%m-%d"),
+                categories=self.categories,
             )
 
             return RetailReport(metadata=metadata, sales_data=sales_data)
 
-        except Exception as e:
-            self.logger.error(f"Error in main processing: {e}")
+        except ValueError:
+            self.logger.exception("Error in main processing")
             empty_month_data = MonthData(
                 states={}, national_total=CategoryTotal(category_445=0.0, category_448=0.0)
             )
             return RetailReport(
                 metadata=Metadata(
-                    last_updated=datetime.now().strftime("%Y-%m-%d"), categories=self.categories
+                    last_updated=datetime.now(tz=datetime).strftime("%Y-%m-%d"),
+                    categories=self.categories,
                 ),
                 sales_data={"error": empty_month_data},
             )
@@ -244,7 +250,7 @@ class RetailSalesProcessor:
                 "completeness": {},
                 "consistency": {},
                 "share_variations": {},
-                "timestamp": datetime.now().isoformat(),
+                "timestamp": datetime.now(tz=datetime).isoformat(),
             }
 
             # Track state shares across months for variation analysis
@@ -285,7 +291,8 @@ class RetailSalesProcessor:
                 month_validation["share_sums"]["445"] = round(share_445_sum, 4)
                 month_validation["share_sums"]["448"] = round(share_448_sum, 4)
                 month_validation["shares_valid"] = (
-                    0.98 <= share_445_sum <= 1.02 and 0.98 <= share_448_sum <= 1.02
+                    LOW_DEVIATION <= share_445_sum <= HIGH_DEVIATION
+                    and LOW_DEVIATION <= share_448_sum <= HIGH_DEVIATION
                 )
 
                 validation_results[month] = month_validation
@@ -294,11 +301,11 @@ class RetailSalesProcessor:
             for state in self.state_id_to_abbreviation.values():
                 validation_results["share_variations"][state] = {
                     "445": {
-                        "unique_shares": sorted(list(state_shares[state]["445"])),
+                        "unique_shares": sorted(state_shares[state]["445"]),
                         "variation_count": len(state_shares[state]["445"]),
                     },
                     "448": {
-                        "unique_shares": sorted(list(state_shares[state]["448"])),
+                        "unique_shares": sorted(state_shares[state]["448"]),
                         "variation_count": len(state_shares[state]["448"]),
                     },
                 }
@@ -323,54 +330,49 @@ class RetailSalesProcessor:
                 for v in validation_results.values()
                 if isinstance(v, dict) and "national_totals_present" in v
             )
-
-            return is_valid, validation_results
-
         except Exception as e:
-            self.logger.error(f"Error in validation: {e}")
-            return False, {"error": str(e), "timestamp": datetime.now().isoformat()}
+            self.logger.exception("Error in validation")
+            return False, {"error": str(e), "timestamp": datetime.now(tz=datetime).isoformat()}
+        else:
+            return is_valid, validation_results
 
     def save_data(self, data: RetailReport, validation_results: dict) -> None:
         """Save processed data and validation results as JSON."""
         try:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_dir = "../samples/census"
-            os.makedirs(output_dir, exist_ok=True)
+            output_dir = Path("data/retail_sales")
+            Path.mkdir(output_dir, exist_ok=True)
 
             # Save main data
-            data_file = f"{output_dir}/retail_sales.json"
+            data_file = Path(f"{output_dir}/retail_sales.json")
             data_dict = data.to_dict()
-            with open(data_file, "w") as f:
+            with Path.open(data_file, "w") as f:
                 json.dump(data_dict, f, indent=2)
             self.logger.info(f"Data saved to {data_file}")
 
             # Save validation results
-            validation_file = f"{output_dir}/retail_sales_validation.json"
-            with open(validation_file, "w") as f:
+            validation_file = Path(f"{output_dir}/retail_sales_validation.json")
+            with Path.open(validation_file, "w") as f:
                 json.dump(validation_results, f, indent=2)
             self.logger.info(f"Validation results saved to {validation_file}")
 
-        except Exception as e:
-            self.logger.error(f"Error saving data: {e}")
+        except FileNotFoundError:
+            self.logger.exception("Error saving data")
 
 
 def main() -> None:
-    """Main function to execute the retail sales data processing."""
+    """Execute the retail sales data processing."""
     try:
         api_key = os.getenv("CENSUS_API_KEY")
         if not api_key:
             raise ValueError("Census API key not found in environment variables")
 
         processor = RetailSalesProcessor(api_key)
-        current_year = datetime.now().year
+        current_year = datetime.now(tz=datetime).year
 
-        data = processor.process_retail_data([str(current_year)])
+        data = processor.process_data([str(current_year)])
         is_valid, validation_results = processor.validate_data(data)
-        print(data)
         if is_valid:
             processor.save_data(data, validation_results)
-        else:
-            raise ValueError("Data validation failed")
 
     except Exception as e:
         raise ValueError("Error in main execution") from e

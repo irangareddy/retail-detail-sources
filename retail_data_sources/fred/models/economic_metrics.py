@@ -1,3 +1,5 @@
+"""Models for economic metrics."""
+
 from dataclasses import dataclass
 
 

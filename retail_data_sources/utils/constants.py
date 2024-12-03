@@ -1,3 +1,10 @@
+"""Constants for the FRED data source."""
+
+import pytz
+
+EASTERN = pytz.timezone("US/Eastern")
+
+
 SERIES_MAPPING = {
     "UMCSENT": "consumer_confidence",
     "UNRATE": "unemployment_rate",

@@ -1,8 +1,12 @@
+"""FRED API handler to fetch, transform, and classify economic data."""
+
 import logging
 import os
+from pathlib import Path
+
+from utils.constants import SERIES_MAPPING
 
 from retail_data_sources.fred.classifier import FREDDataClassifier
-from retail_data_sources.fred.constants import SERIES_MAPPING
 from retail_data_sources.fred.fetcher import FREDDataFetcher
 from retail_data_sources.fred.models.economic_metrics import EconomicData
 from retail_data_sources.fred.transformer import FREDTransformer
@@ -11,12 +15,14 @@ logger = logging.getLogger(__name__)
 
 
 class FREDAPIHandler:
+    """FRED API handler to fetch, transform, and classify economic data."""
+
     def __init__(
         self,
-        api_key: str = None,
+        api_key: str | None = None,
         base_dir: str = "tmp/fred",
-        rules_file: str = None,
-        rules_dict: dict = None,
+        rules_file: str | None = None,
+        rules_dict: dict | None = None,
     ):
         self.api_key = api_key or os.getenv("FRED_API_KEY")
         if not self.api_key:
@@ -37,22 +43,22 @@ class FREDAPIHandler:
             try:
                 data = self.fetcher.fetch_series(series_id)
                 results[SERIES_MAPPING[series_id]] = data is not None
-            except Exception as e:
-                logger.error(f"Error fetching {series_id}: {e}")
+            except Exception:
+                logger.exception(f"Error fetching {series_id}")
                 results[SERIES_MAPPING[series_id]] = False
         return results
 
-    def _cleanup_tmp_files(self):
+    def _cleanup_tmp_files(self) -> None:
         """Clean up temporary files after processing."""
         import shutil
 
-        tmp_dir = os.path.join(self.base_dir, "tmp")
-        if os.path.exists(tmp_dir):
+        tmp_dir = Path(self.base_dir, "tmp")
+        if Path.exists(tmp_dir):
             try:
                 shutil.rmtree(tmp_dir)
                 logger.info("Cleaned up temporary files")
-            except Exception as e:
-                logger.error(f"Error cleaning up temporary files: {e}")
+            except Exception:
+                logger.exception("Error cleaning up temporary files")
 
     def process_data(self, fetch: bool = True) -> EconomicData:
         """Process FRED data through the entire pipeline."""
@@ -85,12 +91,13 @@ class FREDAPIHandler:
             return None
 
 
-def main():
+def main() -> None:
+    """Main function to demonstrate usage of the FRED API handler."""
     # Example usage
     handler = FREDAPIHandler(api_key=None)
     economic_data = handler.process_data(fetch=True)
     if economic_data:
-        print(economic_data)
+        logger.info(economic_data)
 
 
 if __name__ == "__main__":

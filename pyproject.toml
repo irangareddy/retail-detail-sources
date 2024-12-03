@@ -88,5 +88,10 @@ ignore = [
     "PD",      # opinionated linting for pandas code
     "S101",    # use of assert detected
     "TRY003",  # Avoid specifying long messages outside the exception class
+    # Fix these issues in the future @Ranga
+    "C901",    # function is too complex
+    "PLR0912", # too-many-branches
+
+
 ]
 

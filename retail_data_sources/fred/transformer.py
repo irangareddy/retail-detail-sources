@@ -1,27 +1,28 @@
 """Transform FRED data into unified format."""
 
-import glob
 import json
 import logging
-import os
+from pathlib import Path
 from typing import Any
 
-from .constants import SERIES_MAPPING
+from utils.constants import SERIES_MAPPING
 
 logger = logging.getLogger(__name__)
 
 
 class FREDTransformer:
+    """Transform FRED data into unified format."""
+
     def __init__(self, input_dir: str = "data/fred"):
         self.input_dir = input_dir
 
-    def get_latest_files(self) -> dict[str, str]:
+    def get_latest_files(self) -> dict[str, Path]:
         """Get the latest temporary file for each series."""
         latest_files = {}
-        tmp_dir = os.path.join(self.input_dir, "tmp")
+        tmp_dir = Path(self.input_dir, "tmp")
         for series_id in SERIES_MAPPING.keys():
             # Look for temporary files for this series
-            files = glob.glob(os.path.join(tmp_dir, f"tmp_{SERIES_MAPPING[series_id]}_*.json"))
+            files = list(Path(tmp_dir).glob(f"tmp_{SERIES_MAPPING[series_id]}_*.json"))
             if files:
                 latest_files[series_id] = max(files)
         return latest_files
@@ -46,7 +47,7 @@ class FREDTransformer:
 
         for series_id, filepath in latest_files.items():
             try:
-                with open(filepath, encoding="utf-8") as f:
+                with Path.open(filepath, encoding="utf-8") as f:
                     data = json.load(f)
                 series_data[series_id] = self.extract_data_points(data)
             except Exception as e:

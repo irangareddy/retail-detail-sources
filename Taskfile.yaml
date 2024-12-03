@@ -94,7 +94,7 @@ tasks:
     desc: Removes dist, *.pyc and some caches
     cmds:
       - rm -rf {{.DIST_DIR}} .mypy_cache .pytest_cache
-      - find . -name "*.pyc" -print0 | xargs -0 rm || echo ""
+      - find . -name "*.pyc" -logger.info(0 | xargs -0 rm || echo ""
 
   # }}}
   # {{{ check tasks

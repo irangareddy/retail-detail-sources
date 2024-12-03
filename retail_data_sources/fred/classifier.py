@@ -3,6 +3,7 @@
 import json
 import logging
 import os
+from pathlib import Path
 from typing import Any
 
 logger = logging.getLogger(__name__)
@@ -11,20 +12,20 @@ logger = logging.getLogger(__name__)
 class FREDDataClassifier:
     """Classify FRED data based on interpretation rules."""
 
-    def __init__(self, rules_file: str = None, rules_dict: dict = None):
+    def __init__(self, rules_file: str | None = None, rules_dict: dict | None = None):
         """Initialize the classifier with interpretation rules."""
         self.rules = rules_dict if rules_dict else self._load_rules(rules_file)
 
-    def _load_rules(self, rules_file: str = None) -> dict:
+    def _load_rules(self, rules_file: str | None = None) -> dict:
         """Load interpretation rules from JSON file."""
-        default_path = os.path.join(os.path.dirname(__file__), "fred_interpretation_rules.json")
+        default_path = Path(Path(__file__).parent, "fred_interpretation_rules.json")
         rules_file = rules_file or os.getenv("FRED_RULES_FILE", default_path)
 
         try:
-            with open(rules_file) as f:
+            with Path.open(rules_file) as f:
                 return json.load(f)
-        except Exception as e:
-            logger.error(f"Error loading rules file: {e}")
+        except Exception:
+            logger.exception("Error loading rules file")
             raise
 
     def get_threshold_category(self, metric: str, value: float) -> tuple[str, dict]:
@@ -61,8 +62,8 @@ class FREDDataClassifier:
                 "impact": info.get("impact", ""),
                 "label": self.rules["metrics"][metric]["label"],
             }
-        except Exception as e:
-            logger.error(f"Error classifying {metric} value {value}: {e}")
+        except Exception:
+            logger.exception(f"Error classifying {metric} value {value}")
             return {
                 "value": value,
                 "category": "error",
