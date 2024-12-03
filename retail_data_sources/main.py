@@ -19,7 +19,7 @@ class DataFetcher:
     def __init__(self):
         self.fred_api_key = os.getenv("FRED_API_KEY")
         self.census_api_key = os.getenv("CENSUS_API_KEY")
-        self.openweather_api_key = os.getenv("OPENWEATHER_API_KEY")
+        self.openweather_api_key = os.getenv("OPEN_WEATHER_API_KEY")
 
         if not self.fred_api_key:
             raise ValueError("FRED API key not found in environment variables")

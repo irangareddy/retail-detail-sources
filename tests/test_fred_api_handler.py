@@ -8,21 +8,25 @@ import pytest
 from retail_data_sources.fred.fred_api_handler import FREDAPIHandler
 from retail_data_sources.fred.models.economic_metrics import EconomicData, EconomicMetric
 from retail_data_sources.utils.constants import SERIES_MAPPING
+from tests.utils import needs_fred
 
 
 @pytest.fixture
+@needs_fred
 def fred_handler(tmp_path: Path) -> FREDAPIHandler:
     """Create a FRED API handler for testing."""
     assert "FRED_API_KEY" in os.environ, "FRED_API_KEY must be set in the environment"
     return FREDAPIHandler(base_dir=str(tmp_path))
 
 
+@needs_fred
 def test_initialization(fred_handler: FREDAPIHandler) -> None:
     """Test initializing the FRED API handler."""
     assert fred_handler.api_key == os.environ["FRED_API_KEY"]
     assert Path.exists(Path(fred_handler.base_dir))
 
 
+@needs_fred
 def test_fetch_all_series(fred_handler: FREDAPIHandler) -> None:
     """Test fetching all series data."""
     results = fred_handler.fetch_all_series()
@@ -31,6 +35,7 @@ def test_fetch_all_series(fred_handler: FREDAPIHandler) -> None:
         assert results[series_name] is True
 
 
+@needs_fred
 def test_transform_data(fred_handler: FREDAPIHandler) -> None:
     """Test transforming fetched data."""
     fred_handler.fetch_all_series()
@@ -39,6 +44,7 @@ def test_transform_data(fred_handler: FREDAPIHandler) -> None:
     assert isinstance(transformed_data, dict)
 
 
+@needs_fred
 def test_classify_data(fred_handler: FREDAPIHandler) -> None:
     """Test classifying transformed data."""
     transformed_data = {"date1": {"consumer_confidence": 100.0}}  # Change to float value
@@ -55,6 +61,7 @@ def test_classify_data(fred_handler: FREDAPIHandler) -> None:
             assert "label" in metric_data
 
 
+@needs_fred
 def test_process_data(fred_handler: FREDAPIHandler) -> None:
     """Test processing data through the entire pipeline."""
     fred_data = fred_handler.process_data()

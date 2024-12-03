@@ -100,9 +100,9 @@ class WeatherDataProcessor:
 
 def main() -> None:
     """Fetch and process weather data from the OpenWeather API."""
-    api_key = os.getenv("OPENWEATHER_API_KEY")
+    api_key = os.getenv("OPEN_WEATHER_API_KEY")
     if not api_key:
-        raise ValueError("OPENWEATHER_API_KEY environment variable not set.")
+        raise ValueError("OPEN_WEATHER_API_KEY environment variable not set.")
 
     processor = WeatherDataProcessor(api_key)
 
