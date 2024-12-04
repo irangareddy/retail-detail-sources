@@ -1,4 +1,4 @@
-"""Retail sales data models for the Census Bureau retail report."""
+"""Data models for retail sales reports."""
 
 import json
 from dataclasses import dataclass
@@ -110,7 +110,14 @@ class RetailReport:
         sales_data = {
             month: MonthData(
                 states={
-                    state_code: StateData(**state_data)
+                    state_code: StateData(
+                        category_445=Sales(**state_data.get("445", {}))
+                        if state_data.get("445")
+                        else None,
+                        category_448=Sales(**state_data.get("448", {}))
+                        if state_data.get("448")
+                        else None,
+                    )
                     for state_code, state_data in month_data["states"].items()
                 },
                 national_total=CategoryTotal(**month_data["national_total"]),
