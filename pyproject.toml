@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "retail-data-sources"
-version = "1.0.3"
+version = "1.0.4"
 license = "Apache-2.0"
 description = "Data Sources for Retail Demand Forecast"
 authors = ["Sai Ranga Reddy Nukala <itsmerr17@gmail.com>"]
