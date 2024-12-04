@@ -1,6 +1,7 @@
 """census.models.retail_sales"""
 
 from dataclasses import dataclass
+from typing import Any
 
 
 @dataclass
@@ -65,14 +66,15 @@ class RetailReport:
     metadata: Metadata
     sales_data: dict[str, MonthData]  # month -> MonthData
 
-    def to_dict(self) -> dict:
-        """Convert entire report to dictionary format."""
-        return {
-            "metadata": {
+    def __getitem__(self, key: str) -> dict[str, Any]:
+        """Make RetailReport subscriptable."""
+        if key == "metadata":
+            return {
                 "last_updated": self.metadata.last_updated,
                 "categories": self.metadata.categories,
-            },
-            "sales_data": {
+            }
+        if key == "sales_data":
+            return {
                 month: {
                     "states": {
                         state_code: state_data.to_dict()
@@ -81,5 +83,12 @@ class RetailReport:
                     "national_total": month_data.national_total.to_dict(),
                 }
                 for month, month_data in self.sales_data.items()
-            },
+            }
+        raise KeyError(f"Invalid key: {key}")
+
+    def to_dict(self) -> dict:
+        """Convert entire report to dictionary format."""
+        return {
+            "metadata": self["metadata"],
+            "sales_data": self["sales_data"],
         }
