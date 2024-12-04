@@ -8,7 +8,6 @@ from typing import ClassVar
 
 import pandas as pd
 import requests
-from utils.constants import EASTERN
 
 from retail_data_sources.census.models.retail_sales import (
     CategoryTotal,
@@ -18,6 +17,7 @@ from retail_data_sources.census.models.retail_sales import (
     Sales,
     StateData,
 )
+from retail_data_sources.utils.constants import EASTERN
 from retail_data_sources.utils.logging import setup_logging
 
 LOW_DEVIATION: float = 0.98
