@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "retail-data-sources"
-version = "1.0.0"
+version = "1.0.1"
 license = "Apache-2.0"
 description = "Data Sources for Retail Demand Forecast"
 authors = ["Sai Ranga Reddy Nukala <itsmerr17@gmail.com>"]
@@ -12,7 +12,7 @@ readme = "README-public.md"
 
 
 [tool.poetry.dependencies]
-python = ">=3.11, ^3"
+python = ">=3.10, ^3"
 rapidfuzz = "^3.10.1"
 pandas = "^2.2.3"
 numpy = "^2.1.3"
