@@ -1,22 +1,12 @@
 """Retail sales data processor using Census API."""
 
-import json
 import os
 from datetime import datetime
-from pathlib import Path
 from typing import ClassVar
 
 import pandas as pd
 import requests
 
-from retail_data_sources.census.models.retail_sales import (
-    CategoryTotal,
-    Metadata,
-    MonthData,
-    RetailReport,
-    Sales,
-    StateData,
-)
 from retail_data_sources.utils.constants import EASTERN
 from retail_data_sources.utils.logging import setup_logging
 
@@ -166,10 +156,10 @@ class RetailSalesProcessor:
             state_sales[state_code] = round(national_sales * state_data["weight"], 2)
         return state_sales
 
-    def process_data(self, years: list[str]) -> RetailReport:
-        """Process retail sales report."""
+    def process_data(self, years: list[str]) -> dict:
+        """Process retail sales report and return JSON-compatible dictionary."""
         try:
-            sales_data = {}
+            sales_data: dict = {}
 
             for year in years:
                 for category in self.categories:
@@ -192,16 +182,16 @@ class RetailSalesProcessor:
 
                         # Initialize month data if it doesn't exist
                         if month_key not in sales_data:
-                            sales_data[month_key] = MonthData(
-                                states={},
-                                national_total=CategoryTotal(category_445=0.0, category_448=0.0),
-                            )
+                            sales_data[month_key] = {
+                                "states": {},
+                                "national_total": {"category_445": 0.0, "category_448": 0.0},
+                            }
 
                         # Update national total
                         if category == "445":
-                            sales_data[month_key].national_total.category_445 = national_sales
+                            sales_data[month_key]["national_total"]["category_445"] = national_sales
                         else:
-                            sales_data[month_key].national_total.category_448 = national_sales
+                            sales_data[month_key]["national_total"]["category_448"] = national_sales
 
                         # Calculate and update state sales
                         state_sales = self.calculate_state_sales(national_sales, state_weights)
@@ -210,65 +200,73 @@ class RetailSalesProcessor:
                                 continue
 
                             state_abbr = self.state_id_to_abbreviation[state_code]
-                            if state_abbr not in sales_data[month_key].states:
-                                sales_data[month_key].states[state_abbr] = StateData()
 
-                            # Ensure values are Python floats
-                            sales_obj = Sales(
-                                sales_value=float(sales_value),
-                                state_share=float(state_weights[state_code]["weight"]),
-                            )
+                            # Initialize the state entry if it doesn't exist
+                            if state_abbr not in sales_data[month_key]["states"]:
+                                sales_data[month_key]["states"][state_abbr] = {
+                                    "category_445": {"sales_value": 0.0, "state_share": 0.0},
+                                    "category_448": {"sales_value": 0.0, "state_share": 0.0},
+                                }
 
+                            # Create the sales object
+                            sales_obj = {
+                                "sales_value": float(sales_value),
+                                "state_share": float(state_weights[state_code]["weight"]),
+                            }
+
+                            # Update the appropriate category data
+                            state_data = sales_data[month_key]["states"][state_abbr]
                             if category == "445":
-                                sales_data[month_key].states[state_abbr].category_445 = sales_obj
+                                state_data["category_445"].update(sales_obj)
                             else:
-                                sales_data[month_key].states[state_abbr].category_448 = sales_obj
+                                state_data["category_448"].update(sales_obj)
 
-            metadata = Metadata(
-                last_updated=datetime.now(tz=EASTERN).strftime("%Y-%m-%d"),
-                categories=self.categories,
-            )
-
-            return RetailReport(metadata=metadata, sales_data=sales_data)
+            metadata = {
+                "last_updated": datetime.now(tz=EASTERN).strftime("%Y-%m-%d"),
+                "categories": self.categories,
+            }
 
         except ValueError:
             self.logger.exception("Error in main processing")
-            empty_month_data = MonthData(
-                states={}, national_total=CategoryTotal(category_445=0.0, category_448=0.0)
-            )
-            return RetailReport(
-                metadata=Metadata(
-                    last_updated=datetime.now(tz=EASTERN).strftime("%Y-%m-%d"),
-                    categories=self.categories,
-                ),
-                sales_data={"error": empty_month_data},
-            )
+            empty_month_data = {
+                "states": {},
+                "national_total": {"category_445": 0.0, "category_448": 0.0},
+            }
+            return {
+                "metadata": {
+                    "last_updated": datetime.now(tz=EASTERN).strftime("%Y-%m-%d"),
+                    "categories": self.categories,
+                },
+                "sales_data": {"error": empty_month_data},
+            }
+        else:
+            return {"metadata": metadata, "sales_data": sales_data}
 
-    def validate_data(self, data: RetailReport) -> tuple[bool, dict]:
+    def validate_data(self, data: dict) -> tuple[bool, dict]:
         """Validate the generated data for completeness and consistency."""
         try:
             validation_results = {}
 
-            for month, month_data in data.sales_data.items():
+            for month, month_data in data["sales_data"].items():
                 # Check completeness: Are all expected states present?
                 expected_states = set(self.state_id_to_abbreviation.values())
-                actual_states = set(month_data.states.keys())
+                actual_states = set(month_data["states"].keys())
                 missing_states = list(expected_states - actual_states)
 
                 # Check consistency: Are the share sums within the valid range?
                 share_445_sum = sum(
-                    state_data.category_445.state_share
-                    for state_data in month_data.states.values()
-                    if state_data.category_445
+                    state_data["category_445"]["state_share"]
+                    for state_data in month_data["states"].values()
+                    if state_data["category_445"]
                 )
                 share_448_sum = sum(
-                    state_data.category_448.state_share
-                    for state_data in month_data.states.values()
-                    if state_data.category_448
+                    state_data["category_448"]["state_share"]
+                    for state_data in month_data["states"].values()
+                    if state_data["category_448"]
                 )
 
                 month_validation = {
-                    "national_totals_present": bool(month_data.national_total),
+                    "national_totals_present": bool(month_data["national_total"]),
                     "states_complete": len(missing_states) == 0,
                     "shares_valid": LOW_DEVIATION <= share_445_sum <= HIGH_DEVIATION
                     and LOW_DEVIATION <= share_448_sum <= HIGH_DEVIATION,
@@ -288,44 +286,18 @@ class RetailSalesProcessor:
 
         return is_valid, validation_results
 
-    def save_data(self, data: RetailReport, validation_results: dict) -> None:
-        """Save processed data and validation results as JSON."""
-        try:
-            output_dir = Path("data/retail_sales")
-            Path.mkdir(output_dir, exist_ok=True)
-
-            # Save main data
-            data_file = Path(f"{output_dir}/retail_sales.json")
-            data_dict = data.to_dict()
-            with Path.open(data_file, "w") as f:
-                json.dump(data_dict, f, indent=2)
-            self.logger.info(f"Data saved to {data_file}")
-
-            # Save validation results
-            validation_file = Path(f"{output_dir}/retail_sales_validation.json")
-            with Path.open(validation_file, "w") as f:
-                json.dump(validation_results, f, indent=2)
-            self.logger.info(f"Validation results saved to {validation_file}")
-
-        except FileNotFoundError:
-            self.logger.exception("Error saving data")
-
 
 def main() -> None:
-    """Execute the retail sales data processing."""
-    try:
-        api_key = os.getenv("CENSUS_API_KEY") or ""
+    """Fetch and process retail sales data from the Census API."""
+    api_key = os.getenv("CENSUS_API_KEY")
+    if not api_key:
+        raise ValueError("CENSUS_API_KEY environment variable not set.")
 
-        processor = RetailSalesProcessor(api_key)
-        current_year = datetime.now(tz=EASTERN).year
-
-        data = processor.process_data([str(current_year)])
-        is_valid, validation_results = processor.validate_data(data)
-        if is_valid:
-            processor.save_data(data, validation_results)
-
-    except Exception as e:
-        raise ValueError("Error in main execution") from e
+    processor = RetailSalesProcessor(api_key)
+    years = [str(datetime.now(tz=EASTERN).year)]
+    data = processor.process_data(years)
+    is_valid, validation_results = processor.validate_data(data)
+    assert is_valid, f"Validation failed: {validation_results}"
 
 
 if __name__ == "__main__":
