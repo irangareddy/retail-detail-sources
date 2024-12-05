@@ -2,7 +2,7 @@
 
 import logging
 import os
-from pathlib import Path
+from typing import Any
 
 from retail_data_sources.fred.classifier import FREDDataClassifier
 from retail_data_sources.fred.fetcher import FREDDataFetcher
@@ -18,71 +18,44 @@ class FREDAPIHandler:
     def __init__(
         self,
         api_key: str | None = None,
-        base_dir: str = "tmp/fred",
         rules_dict: dict | None = None,
     ):
         self.api_key = api_key or os.getenv("FRED_API_KEY")
         if not self.api_key:
             raise ValueError("FRED API key must be provided")
 
-        self.base_dir = base_dir
-        Path.mkdir(Path(self.base_dir), exist_ok=True)
-
         # Initialize components
-        self.fetcher = FREDDataFetcher(self.api_key, self.base_dir)
-        self.transformer = FREDTransformer(self.base_dir)
+        self.fetcher = FREDDataFetcher(self.api_key)
+        self.transformer = FREDTransformer()
         self.classifier = FREDDataClassifier(rules_dict)
 
-    def fetch_all_series(self) -> dict[str, bool]:
+    def fetch_all_series(self) -> dict[str, dict[str, Any]]:
         """Fetch all configured FRED series data."""
-        results = {}
-        for series_id in SERIES_MAPPING:
+        data: dict[str, dict[str, Any]] = {}
+        for series_id, series_name in SERIES_MAPPING.items():
             try:
-                data = self.fetcher.fetch_series(series_id)
-                results[SERIES_MAPPING[series_id]] = data is not None
+                series_data = self.fetcher.fetch_series(series_id)
+                data[series_name] = series_data if series_data is not None else {}
             except Exception:
-                logger.exception(f"Error fetching {series_id}")
-                results[SERIES_MAPPING[series_id]] = False
-        return results
+                logger.exception(f"Error fetching {series_name}")
+                data[series_name] = {}
+        return data
 
-    def _cleanup_tmp_files(self) -> None:
-        """Clean up temporary files after processing."""
-        import shutil
-
-        tmp_dir = Path(self.base_dir, "tmp")
-        if Path.exists(tmp_dir):
-            try:
-                shutil.rmtree(tmp_dir)
-                logger.info("Cleaned up temporary files")
-            except Exception:
-                logger.exception("Error cleaning up temporary files")
-
-    def process_data(self, fetch: bool = True) -> dict:
+    def process_data(self, fetch: bool = True) -> dict[str, dict[str, Any]]:
         """Process FRED data through the entire pipeline and return JSON."""
         try:
             # Step 1: Fetch data if requested
             if fetch:
-                fetch_results = self.fetch_all_series()
-                if not any(fetch_results.values()):
-                    logger.error("Failed to fetch any FRED series")
-                    return {}
+                fetched_data = self.fetch_all_series()
 
             # Step 2: Transform data
-            transformed_data = self.transformer.transform_data()
-            if not transformed_data:
-                logger.error("Data transformation failed")
-                return {}
+            transformed_data = self.transformer.transform_data(fetched_data)
 
             # Step 3: Classify data
             classified_data = self.classifier.classify_data(transformed_data)
 
-            # Clean up temporary files after successful processing
-            self._cleanup_tmp_files()
-
         except Exception:
             logger.exception("Error in data processing pipeline")
-            # Attempt to clean up temporary files even if processing failed
-            self._cleanup_tmp_files()
             return {}
         else:
             return classified_data

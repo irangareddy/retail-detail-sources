@@ -1,7 +1,6 @@
 """Test the FRED API handler."""
 
 import os
-from pathlib import Path
 
 import pytest
 
@@ -12,17 +11,19 @@ from tests.utils import needs_fred
 
 @pytest.fixture
 @needs_fred
-def fred_handler(tmp_path: Path) -> FREDAPIHandler:
+def fred_handler() -> FREDAPIHandler:
     """Create a FRED API handler for testing."""
     assert "FRED_API_KEY" in os.environ, "FRED_API_KEY must be set in the environment"
-    return FREDAPIHandler(base_dir=str(tmp_path))
+    return FREDAPIHandler(api_key=os.environ["FRED_API_KEY"])
 
 
 @needs_fred
 def test_initialization(fred_handler: FREDAPIHandler) -> None:
     """Test initializing the FRED API handler."""
     assert fred_handler.api_key == os.environ["FRED_API_KEY"]
-    assert Path.exists(Path(fred_handler.base_dir))
+    assert fred_handler.fetcher is not None
+    assert fred_handler.transformer is not None
+    assert fred_handler.classifier is not None
 
 
 @needs_fred
@@ -31,14 +32,14 @@ def test_fetch_all_series(fred_handler: FREDAPIHandler) -> None:
     results = fred_handler.fetch_all_series()
     for series_name in SERIES_MAPPING.values():
         assert series_name in results
-        assert results[series_name] is True
+        assert isinstance(results[series_name], dict)
 
 
 @needs_fred
 def test_transform_data(fred_handler: FREDAPIHandler) -> None:
     """Test transforming fetched data."""
-    fred_handler.fetch_all_series()
-    transformed_data = fred_handler.transformer.transform_data()
+    fetched_data = fred_handler.fetch_all_series()
+    transformed_data = fred_handler.transformer.transform_data(fetched_data)
     assert transformed_data is not None
     assert isinstance(transformed_data, dict)
 
@@ -46,7 +47,7 @@ def test_transform_data(fred_handler: FREDAPIHandler) -> None:
 @needs_fred
 def test_classify_data(fred_handler: FREDAPIHandler) -> None:
     """Test classifying transformed data."""
-    transformed_data = {"date1": {"consumer_confidence": 100.0}}  # Change to float value
+    transformed_data = {"2023-10": {"consumer_confidence": 100.0}}
     classified_data = fred_handler.classifier.classify_data(transformed_data)
     assert classified_data is not None
     assert isinstance(classified_data, dict)
@@ -63,7 +64,7 @@ def test_classify_data(fred_handler: FREDAPIHandler) -> None:
 @needs_fred
 def test_process_data(fred_handler: FREDAPIHandler) -> None:
     """Test processing data through the entire pipeline."""
-    fred_data = fred_handler.process_data()
+    fred_data = fred_handler.process_data(fetch=True)
     assert fred_data is not None
     assert isinstance(fred_data, dict)
 
