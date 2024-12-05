@@ -6,7 +6,6 @@ from pathlib import Path
 
 from retail_data_sources.fred.classifier import FREDDataClassifier
 from retail_data_sources.fred.fetcher import FREDDataFetcher
-from retail_data_sources.fred.models.economic_metrics import EconomicData
 from retail_data_sources.fred.transformer import FREDTransformer
 from retail_data_sources.utils.constants import SERIES_MAPPING
 
@@ -20,7 +19,6 @@ class FREDAPIHandler:
         self,
         api_key: str | None = None,
         base_dir: str = "tmp/fred",
-        rules_file: str | None = None,
         rules_dict: dict | None = None,
     ):
         self.api_key = api_key or os.getenv("FRED_API_KEY")
@@ -33,7 +31,7 @@ class FREDAPIHandler:
         # Initialize components
         self.fetcher = FREDDataFetcher(self.api_key, self.base_dir)
         self.transformer = FREDTransformer(self.base_dir)
-        self.classifier = FREDDataClassifier(rules_file, rules_dict)
+        self.classifier = FREDDataClassifier(rules_dict)
 
     def fetch_all_series(self) -> dict[str, bool]:
         """Fetch all configured FRED series data."""
@@ -59,34 +57,35 @@ class FREDAPIHandler:
             except Exception:
                 logger.exception("Error cleaning up temporary files")
 
-    def process_data(self, fetch: bool = True) -> EconomicData | None:
-        """Process FRED data through the entire pipeline."""
+    def process_data(self, fetch: bool = True) -> dict:
+        """Process FRED data through the entire pipeline and return JSON."""
         try:
             # Step 1: Fetch data if requested
             if fetch:
                 fetch_results = self.fetch_all_series()
                 if not any(fetch_results.values()):
                     logger.error("Failed to fetch any FRED series")
-                    return None
+                    return {}
 
             # Step 2: Transform data
             transformed_data = self.transformer.transform_data()
             if not transformed_data:
                 logger.error("Data transformation failed")
-                return None
+                return {}
 
             # Step 3: Classify data
             classified_data = self.classifier.classify_data(transformed_data)
 
             # Clean up temporary files after successful processing
             self._cleanup_tmp_files()
-            return EconomicData.from_dict(classified_data)
 
         except Exception:
             logger.exception("Error in data processing pipeline")
             # Attempt to clean up temporary files even if processing failed
             self._cleanup_tmp_files()
-            return None
+            return {}
+        else:
+            return classified_data
 
 
 def main() -> None:
@@ -95,7 +94,7 @@ def main() -> None:
     handler = FREDAPIHandler(api_key=None)
     economic_data = handler.process_data(fetch=True)
     if economic_data:
-        logger.info(economic_data)
+        logging.info(economic_data)
 
 
 if __name__ == "__main__":

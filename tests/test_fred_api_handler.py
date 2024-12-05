@@ -6,7 +6,6 @@ from pathlib import Path
 import pytest
 
 from retail_data_sources.fred.fred_api_handler import FREDAPIHandler
-from retail_data_sources.fred.models.economic_metrics import EconomicData, EconomicMetric
 from retail_data_sources.utils.constants import SERIES_MAPPING
 from tests.utils import needs_fred
 
@@ -66,11 +65,29 @@ def test_process_data(fred_handler: FREDAPIHandler) -> None:
     """Test processing data through the entire pipeline."""
     fred_data = fred_handler.process_data()
     assert fred_data is not None
-    assert isinstance(fred_data, EconomicData)
-    for metric in fred_data.metrics:
-        assert isinstance(metric.consumer_confidence, EconomicMetric)
-        assert isinstance(metric.unemployment_rate, EconomicMetric)
-        assert isinstance(metric.inflation_rate, EconomicMetric)
-        assert isinstance(metric.gdp_growth_rate, EconomicMetric)
-        assert isinstance(metric.federal_funds_rate, EconomicMetric)
-        assert isinstance(metric.retail_sales, EconomicMetric)
+    assert isinstance(fred_data, dict)
+
+    # Check that the data contains the expected keys
+    for month_data in fred_data.values():
+        assert "consumer_confidence" in month_data
+        assert "unemployment_rate" in month_data
+        assert "inflation_rate" in month_data
+        assert "gdp_growth_rate" in month_data
+        assert "federal_funds_rate" in month_data
+        assert "retail_sales" in month_data
+
+        # Check the structure of each metric
+        for metric in [
+            "consumer_confidence",
+            "unemployment_rate",
+            "inflation_rate",
+            "gdp_growth_rate",
+            "federal_funds_rate",
+            "retail_sales",
+        ]:
+            assert isinstance(month_data[metric], dict)
+            assert "value" in month_data[metric]
+            assert "category" in month_data[metric]
+            assert "description" in month_data[metric]
+            assert "impact" in month_data[metric]
+            assert "label" in month_data[metric]
