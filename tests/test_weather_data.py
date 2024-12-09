@@ -7,9 +7,6 @@ import pytest
 from retail_data_sources.openweather.weather_data_processor import WeatherDataProcessor
 from tests.utils import needs_open_weather
 
-# You should ensure your `OPEN_WEATHER_API_KEY` is available in the environment.
-# Alternatively, you could set it in the test setup if you're using a test API key.
-
 
 @needs_open_weather
 @pytest.fixture

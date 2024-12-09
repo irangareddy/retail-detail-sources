@@ -72,7 +72,10 @@ class RetailSalesProcessor:
         "56": "WY",
     }
 
-    def __init__(self, api_key: str):
+    def __init__(self, api_key: str | None = None) -> None:
+        """Initialize the RetailSalesProcessor with the Census API key."""
+        if not api_key:
+            raise ValueError("CENSUS_API_KEY environment variable not set.")
         self.api_key = api_key
         self.categories = {
             "445": "Food and Beverage Stores",
@@ -176,7 +179,7 @@ class RetailSalesProcessor:
                         # Fix: Remove year from month value if present
                         if len(month) == DATE_FORMAT_LENGTH:  # Format: YYYYMM
                             month = month[-2:]
-                        month_key = f"{month.zfill(2)}"  # Will now correctly produce "2024-01"
+                        month_key = f"{month.zfill(2)}-01"  # Will now correctly produce "2024-01"
 
                         national_sales = float(row["cell_value"])
 
