@@ -32,7 +32,7 @@ class FREDTransformer:
         result: dict[str, float] = {}
         if "observations" in data:
             for obs in data["observations"]:
-                date = obs["date"][:7]  # Convert YYYY-MM-DD to YYYY-MM
+                date = obs["date"]  # Convert YYYY-MM-DD to YYYY-MM
                 try:
                     value = float(obs["value"]) if obs["value"] not in ["", "."] else None
                     if value is not None:  # Only include non-None values

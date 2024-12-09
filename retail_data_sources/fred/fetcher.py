@@ -16,7 +16,8 @@ logger = logging.getLogger(__name__)
 class FREDDataFetcher:
     """Fetch data from the FRED API."""
 
-    def __init__(self, api_key: str, output_dir: str = "data/fred"):
+    def __init__(self, api_key: str, output_dir: str | None = None):
+        """Initialize the FREDDataFetcher."""
         self.base_url = "https://api.stlouisfed.org/fred/series/observations"
         self.api_key = api_key
         self.output_dir = output_dir
@@ -45,9 +46,15 @@ class FREDDataFetcher:
             response.raise_for_status()
             data: dict[str, Any] = response.json()
 
-            # Save the fetched data
-            output_file = self._get_output_filename(series_id)
-            self._save_to_json(data, output_file)
+            # If output_dir is provided, save the fetched data
+            if self.output_dir:
+                output_file = self._get_output_filename(series_id)
+                self._save_to_json(data, output_file)
+            else:
+                logger.info(
+                    f"Data for {series_id} fetched successfully, "
+                    f"but not saved (output_dir is None)."
+                )
 
         except requests.RequestException:
             logger.exception(f"Error fetching data for series {series_id}")
@@ -56,18 +63,16 @@ class FREDDataFetcher:
             return data
 
     def _get_output_filename(self, series_id: str) -> str:
-        """Generate temporary output filename based on series ID."""
+        """Generate output filename based on series ID."""
         base_name = SERIES_MAPPING.get(series_id, series_id.lower())
 
-        # Create a temporary directory if it doesn't exist
-        tmp_dir = Path(self.output_dir, "tmp")
-        tmp_dir.mkdir(exist_ok=True)
-
-        # Use a timestamp to ensure uniqueness but prefix with tmp_
-        timestamp = datetime.now(EASTERN).strftime("%Y%m%d_%H%M%S")
-
-        # Return the path as a string
-        return str(tmp_dir / f"tmp_{base_name}_{timestamp}.json")
+        # If output_dir is provided, use it, else return a dummy filename for logging
+        if self.output_dir:
+            tmp_dir = Path(self.output_dir, "tmp")
+            tmp_dir.mkdir(exist_ok=True)
+            timestamp = datetime.now(EASTERN).strftime("%Y%m%d_%H%M%S")
+            return str(tmp_dir / f"tmp_{base_name}_{timestamp}.json")
+        return f"tmp_{base_name}_no_output_dir.json"
 
     def _save_to_json(self, data: dict[str, Any], output_file: str) -> bool:
         """Save the data to a JSON file."""

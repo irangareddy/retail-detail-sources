@@ -63,7 +63,6 @@ class FREDAPIHandler:
 
 def main() -> None:
     """Usage of the FRED API handler."""
-    # Example usage
     handler = FREDAPIHandler(api_key=None)
     economic_data = handler.process_data(fetch=True)
     if economic_data:
