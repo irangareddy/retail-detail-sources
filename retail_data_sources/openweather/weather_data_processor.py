@@ -20,8 +20,17 @@ class WeatherDataProcessor:
             "CA": (36.7783, -119.4179),
             "NY": (42.1497, -74.9384),
             "TX": (31.9686, -99.9018),
+            "FL": (27.9947, -81.7603),
+            "IL": (40.6331, -89.3985),
+            "GA": (33.7490, -84.3880),
+            "PA": (41.2033, -77.1945),
+            "WA": (47.7511, -120.7401),
+            "OH": (40.4173, -82.9071),
+            "MI": (44.3148, -85.6024),
+            "NC": (35.7596, -79.0193),
+            "NV": (38.8026, -116.4194),
         }
-        self.months = range(1, 3)
+        self.months = range(1, 13)
 
     def fetch_and_parse_weather_data(self, lat: float, lon: float, month: int) -> dict | None:
         """Fetch and parse weather data from the OpenWeather API."""
